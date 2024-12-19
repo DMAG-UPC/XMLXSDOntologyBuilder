@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="qualified" targetNamespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" elementFormDefault="qualified"
+           xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element type="rdf:RDFType" name="RDF" />
+    <xs:element type="rdf:typeType" name="type"/>
+    <xs:attribute type="xs:string" name="about" />
+    <xs:attribute type="xs:string" name="resource"/>
+    <xs:attribute type="xs:string" name="parseType"/>
+    <xs:attribute type="xs:string" name="label"/>
+    <xs:attribute type="xs:string" name="datatype"/>
+    <xs:element type="rdf:PropertyType" name="Property"/>
+    <xs:element type="rdf:firstType" name="first"/>
+    <xs:element type="rdf:restType" name="rest"/>
+    <xs:element type="rdf:DescriptionType" name="Description"/>
+
+    <xs:complexType name="DescriptionType">
+        <xs:sequence>
+            <xs:element type="rdf:typeType" name="type" minOccurs="0"/>
+            <xs:element type="rdf:firstType" name="first" minOccurs="0"/>
+            <xs:element type="rdf:restType" name="rest" minOccurs="0"/>
+        </xs:sequence>
+        <xs:anyAttribute/>
+    </xs:complexType>
+
+    <xs:complexType name="firstType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string"/>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="restType">
+        <xs:sequence>
+            <xs:element type="rdf:DescriptionType" name="Description" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="resource" use="optional"/>
+    </xs:complexType>
+
+    <xs:complexType name="RDFType">
+        <xs:sequence>
+            <xs:any maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="typeType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="resource" use="optional"/>
+                <xs:anyAttribute/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="PropertyType">
+        <xs:sequence>
+            <xs:element type="rdf:typeType" name="type"/>
+            <xs:any maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="about" use="optional"/>
+        <xs:attribute type="xs:string" name="vsterm_status" use="optional"/>
+        <xs:attribute type="xs:string" name="rdflabel" use="optional"/>
+        <xs:anyAttribute/>
+    </xs:complexType>
+
+</xs:schema>

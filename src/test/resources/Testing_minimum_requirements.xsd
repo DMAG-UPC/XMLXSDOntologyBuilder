@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns="edu.upc.dmag" targetNamespace="edu.upc.dmag"
+           elementFormDefault="qualified">
+
+    <xs:complexType name="Actor">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="arbitrary_value" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Content">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="arbitrary_value" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Requirement">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="actor" type="ns:Actor"/>
+            <xs:element name="related_content" type="ns:Content"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="root">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="requirement" type="ns:Requirement" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ns:root xmlns:ns="edu.upc.dmag" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="edu.upc.dmag Testing_ExtendedType.xsd">
+    <ns:entry>
+        <ns:testElementBase>hi</ns:testElementBase>
+        <ns:testElementExtended>1</ns:testElementExtended>
+    </ns:entry>
+
+    <ns:entry>
+        <ns:testElementBase>bye</ns:testElementBase>
+        <ns:testElementExtended>2</ns:testElementExtended>
+    </ns:entry>
+</ns:root>

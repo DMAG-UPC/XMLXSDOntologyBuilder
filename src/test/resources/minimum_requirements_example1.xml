@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ns:root xmlns:ns="edu.upc.dmag" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="edu.upc.dmag Testing_minimum_requirements.xsd">
+    <ns:requirement>
+        <ns:name>Requirement test 1</ns:name>
+        <ns:actor>
+            <ns:name>actor test 1</ns:name>
+            <ns:arbitrary_value>1</ns:arbitrary_value>
+        </ns:actor>
+        <ns:related_content>
+            <ns:name>content 1</ns:name>
+            <ns:arbitrary_value>1</ns:arbitrary_value>
+        </ns:related_content>
+    </ns:requirement>
+
+    <ns:requirement>
+        <ns:name>Requirement test 1 bis</ns:name>
+        <ns:actor>
+            <ns:name>actor test 1</ns:name>
+            <ns:arbitrary_value>1</ns:arbitrary_value>
+        </ns:actor>
+        <ns:related_content>
+            <ns:name>content 2</ns:name>
+            <ns:arbitrary_value>2</ns:arbitrary_value>
+        </ns:related_content>
+    </ns:requirement>
+
+    <ns:requirement>
+        <ns:name>Requirement test 2</ns:name>
+        <ns:actor>
+            <ns:name>actor test 2</ns:name>
+            <ns:arbitrary_value>2</ns:arbitrary_value>
+        </ns:actor>
+        <ns:related_content>
+            <ns:name>content 1</ns:name>
+            <ns:arbitrary_value>1</ns:arbitrary_value>
+        </ns:related_content>
+    </ns:requirement>
+</ns:root>

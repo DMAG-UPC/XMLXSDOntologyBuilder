@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="qualified" targetNamespace="http://www.w3.org/2000/01/rdf-schema#" elementFormDefault="qualified"
+           xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:attribute type="xs:string" name="comment"/>
+    <xs:attribute type="xs:string" name="label"/>
+    <xs:element type="rdfs:domainType" name="domain"/>
+    <xs:element type="rdfs:subPropertyOfType" name="subPropertyOf"/>
+    <xs:element type="rdfs:rangeType" name="range"/>
+    <xs:element type="rdfs:isDefinedByType" name="isDefinedBy"/>
+    <xs:element type="rdfs:ClassType" name="Class"/>
+    <xs:element type="rdfs:DatatypeType" name="Datatype"/>
+
+    <xs:complexType name="DatatypeType">
+        <xs:sequence>
+            <xs:any/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ClassType" mixed="true">
+        <xs:sequence>
+            <xs:any/>
+            <xs:element type="rdfs:isDefinedByType" name="isDefinedBy" minOccurs="0"/>
+            <xs:element type="rdfs:subClassOfType" name="subClassOf" minOccurs="0"/>
+        </xs:sequence>
+        <xs:anyAttribute/>
+    </xs:complexType>
+
+    <xs:complexType name="isDefinedByType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:anyAttribute/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="subClassOfType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:anyAttribute/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="domainType" mixed="true">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="rdfresource" use="optional"/>
+        <xs:anyAttribute/>
+    </xs:complexType>
+
+    <xs:complexType name="rangeType" mixed="true">
+        <xs:sequence>
+            <xs:any minOccurs="0"/>
+            </xs:sequence>
+        <xs:anyAttribute/>
+    </xs:complexType>
+
+    <xs:complexType name="subPropertyOfType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:anyAttribute/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="RestrictionTypeRDFS">
+        <xs:sequence>
+            <xs:any/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="unionOfType">
+        <xs:sequence>
+            <xs:element type="rdfs:RestrictionTypeRDFS" name="Restriction" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="rdfparseType" use="optional"/>
+    </xs:complexType>
+
+</xs:schema>

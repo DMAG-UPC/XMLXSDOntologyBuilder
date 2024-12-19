@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" targetNamespace="edu.up.ontology2" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!-- ESQUEMA QUE GENERÓ EL INTELLIJ -->
+  <xs:element name="RDF" type="RDFType"/>
+  <xs:complexType name="OntologyType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="rdfabout"/>
+        <xs:attribute type="xs:string" name="dctitle"/>
+        <xs:attribute type="xs:string" name="dcdescription"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="AnnotationPropertyType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="rdfabout" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ClassType" mixed="true">
+    <xs:sequence>
+      <xs:element type="typeType" name="type" minOccurs="0"/>
+      <xs:element type="isDefinedByType" name="isDefinedBy" minOccurs="0"/>
+      <xs:element type="subClassOfType" name="subClassOf" minOccurs="0"/>
+      <xs:element type="unionOfType" name="unionOf" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="rdfabout" use="optional"/>
+    <xs:attribute type="xs:string" name="rdflabel" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="typeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="rdfresource" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="isDefinedByType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="rdfresource" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="subClassOfType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="rdfresource" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="domainType" mixed="true">
+    <xs:sequence>
+      <xs:element type="ClassType" name="Class" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="rdfresource" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="rangeType" mixed="true">
+    <xs:sequence>
+      <xs:element type="ClassType" name="Class" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="rdfresource" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="PropertyType">
+    <xs:sequence>
+      <xs:element type="typeType" name="type"/>
+      <xs:element type="domainType" name="domain"/>
+      <xs:element type="rangeType" name="range" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="isDefinedByType" name="isDefinedBy"/>
+      <xs:element type="cardinalityType" name="cardinality" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="rdfabout" use="optional"/>
+    <xs:attribute type="xs:string" name="vsterm_status" use="optional"/>
+    <xs:attribute type="xs:string" name="rdflabel" use="optional"/>
+    <xs:attribute type="xs:string" name="rdfcomment" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="cardinalityType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="rdfdatatype"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="subPropertyOfType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="rdfresource"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="onPropertyType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="rdfresource" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="someValuesFromType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="rdfresource" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RestrictionType">
+    <xs:sequence>
+      <xs:element type="onPropertyType" name="onProperty"/>
+      <xs:element type="someValuesFromType" name="someValuesFrom"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="unionOfType">
+    <xs:sequence>
+      <xs:element type="RestrictionType" name="Restriction" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="rdfparseType" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="ObjectPropertyType">
+    <xs:sequence>
+      <xs:element type="subPropertyOfType" name="subPropertyOf"/>
+      <xs:element type="domainType" name="domain" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="rangeType" name="range"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="rdfabout"/>
+  </xs:complexType>
+  <xs:complexType name="RDFType">
+    <xs:sequence>
+      <xs:element type="OntologyType" name="Ontology">
+        <xs:annotation>
+          <xs:documentation>
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns:owl="http://www.w3.org/2002/07/owl#"
+        xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+        xmlns:foaf="http://xmlns.com/foaf/0.1/"
+        xmlns:wot="http://xmlns.com/wot/0.1/"
+        xmlns:dc="http://purl.org/dc/elements/1.1/">
+</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element type="AnnotationPropertyType" name="AnnotationProperty" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="ClassType" name="Class" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="PropertyType" name="Property" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="ObjectPropertyType" name="ObjectProperty"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

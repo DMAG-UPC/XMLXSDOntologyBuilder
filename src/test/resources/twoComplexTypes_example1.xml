@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ns:root xmlns:ns="edu.upc.dmag"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="edu.upc.dmag Testing_TwoComplexTypes.xsd">
+    <ns:entry>
+        <ns:element_a>testa</ns:element_a>
+        <ns:element_b>1</ns:element_b>
+        <ns:child_a>
+            <ns:element_c>testc</ns:element_c>
+            <ns:element_d>2</ns:element_d>
+        </ns:child_a>
+    </ns:entry>
+</ns:root>

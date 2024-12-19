@@ -1,0 +1,284 @@
+<rdf:RDF
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns:owl="http://www.w3.org/2002/07/owl#"
+        xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+        xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://xmlns.com/foaf/0.1/" dc:title="Friend of a Friend (FOAF) vocabulary"
+                  dc:description="The Friend of a Friend (FOAF) RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language."/>
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/wot/0.1/assurance"/>
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/wot/0.1/src_assurance"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    <owl:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Class"/>
+
+    <rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/Requirement" rdfs:label="Requirement">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/AbstractContent" rdfs:label="AbstractContent">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/ImplementationRequirement" rdfs:label="ImplementationRequirement">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/ProhibitedImplementationRequirement" rdfs:label="ProhibitedImplementationRequirement">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/Content" rdfs:label="Content">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/Actor" rdfs:label="Actor">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/AbstractContent"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/Documentation" rdfs:label="Documentation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/AbstractContent"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/Action" rdfs:label="Action">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/Event" rdfs:label="Event">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/When" rdfs:label="When">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/Goal" rdfs:label="Goal">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/RequirementOrigins" rdfs:label="RequirementOrigins">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </rdfs:Class>
+
+    <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/name" vs:term_status="testing"
+                  rdfs:label="name"
+                  rdfs:comment="name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/note_name" vs:term_status="testing"
+                  rdfs:label="note_name"
+                  rdfs:comment="note_name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/condition" vs:term_status="testing"
+                  rdfs:label="condition"
+                  rdfs:comment="condition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/prior_to" vs:term_status="testing"
+                  rdfs:label="prior_to"
+                  rdfs:comment="prior_to">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/trigger_implemented_asset" vs:term_status="testing"
+                  rdfs:label="trigger_implemented_asset"
+                  rdfs:comment="trigger_implemented_asset">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/implemented" vs:term_status="testing"
+                  rdfs:label="implemented"
+                  rdfs:comment="implemented">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/ImplementationRequirement"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Content"/>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/prohibited_implementation" vs:term_status="testing"
+                  rdfs:label="prohibited_implementation"
+                  rdfs:comment="prohibited_implementation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/ProhibitedImplementationRequirement"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Content"/>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/actor" vs:term_status="testing"
+                  rdfs:label="actor"
+                  rdfs:comment="actor">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Actor"/>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/has_action" vs:term_status="testing"
+                  rdfs:label="has_action"
+                  rdfs:comment="has_action">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Actor"/>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/using" vs:term_status="testing"
+                  rdfs:label="using"
+                  rdfs:comment="using">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Content"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Action"/>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/related_event" vs:term_status="testing"
+                  rdfs:label="related_event"
+                  rdfs:comment="related_event">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Event"/>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/when" vs:term_status="testing"
+                  rdfs:label="when"
+                  rdfs:comment="when">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/When"/>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/goal" vs:term_status="testing"
+                  rdfs:label="goal"
+                  rdfs:comment="goal">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Goal"/>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/requirement_origin" vs:term_status="testing"
+                  rdfs:label="requirement_origin"
+                  rdfs:comment="requirement_origin">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/RequirementOrigins"/>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </rdf:Property>
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/choice">
+        <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/choice"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Actor"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://xmlns.com/foaf/0.1/choice"/>
+                        <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Content"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://xmlns.com/foaf/0.1/choice"/>
+                        <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Documentation"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/has_action"
+                          vs:term_status="testing"
+                          rdfs:label="has_action"
+                          rdfs:comment="has_action">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Actor"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>accessing</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>communicating</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>controlling</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>monitoring</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>pairing</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first>validating</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first>verifying</rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <!--<rdfs:comment>has_action</rdfs:comment>
+        <rdfs:label>has_action</rdfs:label>
+        <vs:term_status>testing</vs:term_status>-->
+    </owl:DatatypeProperty>
+
+</rdf:RDF>
+
+

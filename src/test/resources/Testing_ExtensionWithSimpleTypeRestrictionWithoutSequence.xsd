@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns="edu.upc.dmag" targetNamespace="edu.upc.dmag"
+           elementFormDefault="qualified">
+
+    <xs:complexType name="base">
+        <xs:sequence/>
+    </xs:complexType>
+
+    <xs:complexType name="extended_type">
+        <xs:complexContent>
+            <xs:extension base="ns:base">
+                <
+                    <xs:element name="action_type">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="accessing"/>
+                                <xs:enumeration value="communicating"/>
+                                <xs:enumeration value="verifying"/>
+                                <xs:enumeration value="pairing"/>
+                                <xs:enumeration value="controlling"/>
+                                <xs:enumeration value="validating"/>
+                                <xs:enumeration value="monitoring"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="root" type="ns:extended_type"/>
+
+</xs:schema>

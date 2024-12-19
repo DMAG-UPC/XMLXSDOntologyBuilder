@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><ns3:RDF xmlns:ns3="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:ns1="http://www.w3.org/2000/01/rdf-schema#" xmlns:ns2="http://www.w3.org/2002/07/owl#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ https://danielnaro.github.io/OWL_RDF_schemas/Ontology_2_dc.xsd  http://www.w3.org/2003/06/sw-vocab-status/ns# https://danielnaro.github.io/OWL_RDF_schemas/Ontology_2_rdf.xsd">
+
+    <ns2:Ontology xmlns:ns6="http://purl.org/dc/elements/1.1/" ns3:about="http://xmlns.com/foaf/0.1/" ns6:description="The Friend of a Friend (FOAF) RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language." ns6:title="Friend of a Friend (FOAF) vocabulary"/>
+
+    <ns2:AnnotationProperty ns3:about="http://xmlns.com/wot/0.1/assurance"/>
+
+    <ns2:AnnotationProperty ns3:about="http://xmlns.com/wot/0.1/src_assurance"/>
+
+    <ns2:AnnotationProperty ns3:about="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"/>
+
+    <ns2:AnnotationProperty ns3:about="http://purl.org/dc/elements/1.1/description"/>
+
+    <ns2:AnnotationProperty ns3:about="http://purl.org/dc/elements/1.1/title"/>
+
+    <ns2:AnnotationProperty ns3:about="http://purl.org/dc/elements/1.1/date"/>
+
+    <ns2:Class ns3:about="http://www.w3.org/2000/01/rdf-schema#Class"/>
+
+    <ns1:Class ns1:label="rootEntryType" ns3:about="http://xmlns.com/foaf/0.1/rootEntryType">
+
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
+
+        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+
+    </ns1:Class>
+
+    <ns1:Class ns1:label="childElement" ns3:about="http://xmlns.com/foaf/0.1/childElement">
+
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
+
+        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+
+    </ns1:Class>
+
+    <ns1:Class ns1:label="grandChildElement" ns3:about="http://xmlns.com/foaf/0.1/grandChildElement">
+
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
+
+        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+
+    </ns1:Class>
+
+    <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:comment="element_f" ns1:label="element_f" ns3:about="http://xmlns.com/foaf/0.1/element_f" ns6:term_status="testing">
+
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+
+        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/grandChildElement"/>
+
+        <ns1:range ns3:resource="http://www.w3.org/2001/XMLSchema#int"/>
+
+        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+
+    </ns3:Property>
+
+    <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:comment="child_a" ns1:label="child_a" ns3:about="http://xmlns.com/foaf/0.1/child_a" ns6:term_status="testing">
+
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+
+        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/rootEntryType"/>
+
+        <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/childElement"/>
+
+        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+
+    </ns3:Property>
+
+    <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:comment="element_e" ns1:label="element_e" ns3:about="http://xmlns.com/foaf/0.1/element_e" ns6:term_status="testing">
+
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+
+        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/grandChildElement"/>
+
+        <ns1:range ns3:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+
+        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+
+    </ns3:Property>
+
+    <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:comment="element_d" ns1:label="element_d" ns3:about="http://xmlns.com/foaf/0.1/element_d" ns6:term_status="testing">
+
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+
+        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/childElement"/>
+
+        <ns1:range ns3:resource="http://www.w3.org/2001/XMLSchema#int"/>
+
+        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+
+    </ns3:Property>
+
+    <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:comment="element_c" ns1:label="element_c" ns3:about="http://xmlns.com/foaf/0.1/element_c" ns6:term_status="testing">
+
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+
+        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/childElement"/>
+
+        <ns1:range ns3:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+
+        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+
+    </ns3:Property>
+
+    <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:comment="element_b" ns1:label="element_b" ns3:about="http://xmlns.com/foaf/0.1/element_b" ns6:term_status="testing">
+
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+
+        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/rootEntryType"/>
+
+        <ns1:range ns3:resource="http://www.w3.org/2001/XMLSchema#int"/>
+
+        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+
+    </ns3:Property>
+
+    <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:comment="element_a" ns1:label="element_a" ns3:about="http://xmlns.com/foaf/0.1/element_a" ns6:term_status="testing">
+
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+
+        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/rootEntryType"/>
+
+        <ns1:range ns3:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+
+        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+
+    </ns3:Property>
+
+    <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:comment="grandchild_a" ns1:label="grandchild_a" ns3:about="http://xmlns.com/foaf/0.1/grandchild_a" ns6:term_status="testing">
+
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+
+        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/childElement"/>
+
+        <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/grandChildElement"/>
+
+        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+
+    </ns3:Property>
+
+</ns3:RDF>

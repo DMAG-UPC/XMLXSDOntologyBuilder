@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns="edu.upc.dmag" targetNamespace="edu.upc.dmag"
+           elementFormDefault="qualified">
+
+    <xs:complexType name="grandChildElement">
+        <xs:sequence>
+            <xs:element name="element_e" type="xs:string"/>
+            <xs:element name="element_f" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="childElement">
+        <xs:sequence>
+            <xs:element name="element_c" type="xs:string"/>
+            <xs:element name="element_d" type="xs:integer"/>
+            <xs:element name="grandchild_a" type="ns:grandChildElement"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="rootEntryType">
+        <xs:sequence>
+            <xs:element name="element_a" type="xs:string"/>
+            <xs:element name="element_b" type="xs:integer"/>
+            <xs:element name="child_a" type="ns:childElement"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+
+    <xs:element name="root">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="entry" type="ns:rootEntryType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ns:root xmlns:ns="http://edu.upc.dmag.one_complex_type/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://edu.upc.dmag.one_complex_type/ Testing_OneComplexType.xsd">
+    <ns:rootEntry>
+        <ns:element_a>test</ns:element_a>
+        <ns:element_b>1</ns:element_b>
+    </ns:rootEntry>
+</ns:root>

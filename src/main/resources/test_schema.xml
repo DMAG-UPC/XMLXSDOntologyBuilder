@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns1:RDF xmlns:ns1="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:ns2="http://www.w3.org/2002/07/owl#" xmlns:ns3="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ https://danielnaro.github.io/OWL_RDF_schemas/Ontology_2_dc.xsd  http://www.w3.org/2003/06/sw-vocab-status/ns# https://danielnaro.github.io/OWL_RDF_schemas/Ontology_2_rdf.xsd">
+    <ns2:Ontology xmlns:ns6="http://purl.org/dc/elements/1.1/" ns1:about="http://xmlns.com/foaf/0.1/" ns6:description="The Friend of a Friend (FOAF) RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language." ns6:title="Friend of a Friend (FOAF) vocabulary"/>
+    <ns2:AnnotationProperty ns1:about="http://xmlns.com/wot/0.1/assurance"/>
+    <ns2:AnnotationProperty ns1:about="http://xmlns.com/wot/0.1/src_assurance"/>
+    <ns2:AnnotationProperty ns1:about="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"/>
+    <ns2:AnnotationProperty ns1:about="http://purl.org/dc/elements/1.1/description"/>
+    <ns2:AnnotationProperty ns1:about="http://purl.org/dc/elements/1.1/title"/>
+    <ns2:AnnotationProperty ns1:about="http://purl.org/dc/elements/1.1/date"/>
+    <ns2:Class ns1:about="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <ns3:Class ns3:label="Requirement" ns1:about="http://xmlns.com/foaf/0.1/Requirement">
+        <ns1:type ns1:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <ns3:isDefinedBy ns1:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns3:Class>
+    <ns3:Class ns3:label="DefinitionRequirement" ns1:about="http://xmlns.com/foaf/0.1/DefinitionRequirement">
+        <ns1:type ns1:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <ns3:subClassOf ns1:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+    </ns3:Class>
+    <ns3:Class ns3:label="RequirementOrigins" ns1:about="http://xmlns.com/foaf/0.1/RequirementOrigins">
+        <ns1:type ns1:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <ns3:isDefinedBy ns1:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns3:Class>
+    <ns3:Class ns3:label="Actor" ns1:about="http://xmlns.com/foaf/0.1/Actor">
+        <ns1:type ns1:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <ns3:subClassOf ns1:resource="http://xmlns.com/foaf/0.1/AbstractContent"/>
+    </ns3:Class>
+    <ns3:Class ns3:label="When" ns1:about="http://xmlns.com/foaf/0.1/When">
+        <ns1:type ns1:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <ns3:isDefinedBy ns1:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns3:Class>
+    <ns3:Class ns3:label="using_type" ns1:about="http://xmlns.com/foaf/0.1/using_type">
+        <ns1:type ns1:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <ns3:isDefinedBy ns1:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns3:Class>
+    <ns3:Class ns3:label="Content" ns1:about="http://xmlns.com/foaf/0.1/Content">
+        <ns1:type ns1:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <ns3:isDefinedBy ns1:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns3:Class>
+
+    <ns1:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns3:label="requirement_origin" ns3:comment="requirement_origin" ns6:term_status="testing" ns1:about="http://xmlns.com/foaf/0.1/requirement_origin">
+        <ns1:type ns1:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <ns3:domain ns1:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+        <ns3:range ns1:resource="http://xmlns.com/foaf/0.1/RequirementOrigins"/>
+        <ns3:isDefinedBy ns1:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns1:Property>
+    <ns1:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns3:label="actor" ns3:comment="actor" ns6:term_status="testing" ns1:about="http://xmlns.com/foaf/0.1/actor">
+        <ns1:type ns1:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <ns3:domain ns1:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+        <ns3:range ns1:resource="http://xmlns.com/foaf/0.1/Actor"/>
+        <ns3:isDefinedBy ns1:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns1:Property>
+    <ns1:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns3:label="name" ns3:comment="name" ns6:term_status="testing" ns1:about="http://xmlns.com/foaf/0.1/name">
+        <ns1:type ns1:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <ns3:domain ns1:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+        <ns3:range ns1:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <ns3:isDefinedBy ns1:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns1:Property>
+    <ns1:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns3:label="when" ns3:comment="when" ns6:term_status="testing" ns1:about="http://xmlns.com/foaf/0.1/when">
+        <ns1:type ns1:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <ns3:domain ns1:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+        <ns3:range ns1:resource="http://xmlns.com/foaf/0.1/When"/>
+        <ns3:isDefinedBy ns1:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns1:Property>
+    <ns1:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns3:label="condition" ns3:comment="condition" ns6:term_status="testing" ns1:about="http://xmlns.com/foaf/0.1/condition">
+        <ns1:type ns1:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <ns3:domain ns1:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+        <ns3:range ns1:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <ns3:isDefinedBy ns1:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns1:Property>
+    <ns1:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns3:label="using" ns3:comment="using" ns6:term_status="testing" ns1:about="http://xmlns.com/foaf/0.1/using">
+        <ns1:type ns1:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <ns3:domain ns1:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+        <ns3:range ns1:resource="http://xmlns.com/foaf/0.1/using_type"/>
+        <ns3:isDefinedBy ns1:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns1:Property>
+    <ns1:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns3:label="defined" ns3:comment="defined" ns6:term_status="testing" ns1:about="http://xmlns.com/foaf/0.1/defined">
+        <ns1:type ns1:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <ns3:domain ns1:resource="http://xmlns.com/foaf/0.1/DefinitionRequirement"/>
+        <ns3:range ns1:resource="http://xmlns.com/foaf/0.1/Content"/>
+        <ns3:isDefinedBy ns1:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns1:Property>
+    <ns1:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns3:label="based_on" ns3:comment="based_on" ns6:term_status="testing" ns1:about="http://xmlns.com/foaf/0.1/based_on">
+        <ns1:type ns1:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <ns3:domain ns1:resource="http://xmlns.com/foaf/0.1/DefinitionRequirement"/>
+        <ns3:range ns1:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <ns3:isDefinedBy ns1:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns1:Property>
+</ns1:RDF>

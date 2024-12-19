@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:RDF xmlns:ns2="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:ns3="http://www.w3.org/2000/01/rdf-schema#" xmlns:ns4="http://www.w3.org/2002/07/owl#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ https://danielnaro.github.io/OWL_RDF_schemas/Ontology_2_dc.xsd  http://www.w3.org/2003/06/sw-vocab-status/ns# https://danielnaro.github.io/OWL_RDF_schemas/Ontology_2_rdf.xsd">
+    <ns4:Ontology xmlns:ns6="http://purl.org/dc/elements/1.1/" ns2:about="http://xmlns.com/foaf/0.1/" ns6:description="The Friend of a Friend (FOAF) RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language." ns6:title="Friend of a Friend (FOAF) vocabulary"/>
+    <ns4:AnnotationProperty ns2:about="http://xmlns.com/wot/0.1/assurance"/>
+    <ns4:AnnotationProperty ns2:about="http://xmlns.com/wot/0.1/src_assurance"/>
+    <ns4:AnnotationProperty ns2:about="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"/>
+    <ns4:AnnotationProperty ns2:about="http://purl.org/dc/elements/1.1/description"/>
+    <ns4:AnnotationProperty ns2:about="http://purl.org/dc/elements/1.1/title"/>
+    <ns4:AnnotationProperty ns2:about="http://purl.org/dc/elements/1.1/date"/>
+    <ns4:Class ns2:about="http://www.w3.org/2000/01/rdf-schema#Class"/>
+
+</ns2:RDF>

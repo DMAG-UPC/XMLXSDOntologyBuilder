@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns="edu.upc.dmag" targetNamespace="edu.upc.dmag"
+           elementFormDefault="qualified">
+    <xs:complexType name="testBase">
+        <xs:sequence>
+            <xs:element name="testElementBase" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="testExtended">
+        <xs:complexContent>
+            <xs:extension base="ns:testBase"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="root" type="ns:testExtended"/>
+</xs:schema>

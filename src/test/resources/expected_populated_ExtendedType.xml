@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://xmlns.com/foaf/0.1/"
+         xml:base="http://xmlns.com/foaf/0.1/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:wot="http://xmlns.com/wot/0.1/"
+         xmlns:xml="http://www.w3.org/XML/1998/namespace"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://xmlns.com/foaf/0.1/">
+        <dc:description>The Friend of a Friend (FOAF) RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language.</dc:description>
+        <dc:title>Friend of a Friend (FOAF) vocabulary</dc:title>
+    </owl:Ontology>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+
+
+
+    <!-- http://www.w3.org/2003/06/sw-vocab-status/ns#term_status -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"/>
+
+
+
+    <!-- http://xmlns.com/wot/0.1/assurance -->
+
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/wot/0.1/assurance"/>
+
+
+
+    <!-- http://xmlns.com/wot/0.1/src_assurance -->
+
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/wot/0.1/src_assurance"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+
+    <!-- http://xmlns.com/foaf/0.1/testElementBase -->
+
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/testElementBase">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/testBase"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>testElementBase</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>testElementBase</rdfs:label>
+        <ns6:term_status>testing</ns6:term_status>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://xmlns.com/foaf/0.1/testElementExtended -->
+
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/testElementExtended">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/testExtended"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment>testElementExtended</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>testElementExtended</rdfs:label>
+        <ns6:term_status>testing</ns6:term_status>
+    </owl:DatatypeProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Class -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Class"/>
+
+
+
+    <!-- http://xmlns.com/foaf/0.1/testBase -->
+
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/testBase">
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>testBase</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://xmlns.com/foaf/0.1/testExtended -->
+
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/testExtended">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/testBase"/>
+        <rdfs:label>testExtended</rdfs:label>
+    </owl:Class>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+
+    <!-- http://xmlns.com/foaf/0.1/testExtended__testElementBase_bye__testElementExtended_2 -->
+
+
+    <owl:NamedIndividual rdf:about="http://xmlns.com/foaf/0.1/testExtended__testElementBase_bye__testElementExtended_2">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/testExtended"/>
+        <testElementBase>bye</testElementBase>
+        <testElementExtended rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</testElementExtended>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://xmlns.com/foaf/0.1/testExtended__testElementBase_hi__testElementExtended_1 -->
+
+
+    <owl:NamedIndividual rdf:about="http://xmlns.com/foaf/0.1/testExtended__testElementBase_hi__testElementExtended_1">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/testExtended"/>
+        <testElementBase>hi</testElementBase>
+        <testElementExtended rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</testElementExtended>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+        <!-- Generated by the OWL API (version 5.5.0) https://github.com/owlcs/owlapi/ -->
+
+
