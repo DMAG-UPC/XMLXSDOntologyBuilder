@@ -10,7 +10,10 @@ package org.example.ontology;
 
 import jakarta.annotation.Generated;
 import jakarta.xml.bind.JAXBElement;
-import jakarta.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElementRef;
+import jakarta.xml.bind.annotation.XmlType;
 
 import java.io.Serializable;
 

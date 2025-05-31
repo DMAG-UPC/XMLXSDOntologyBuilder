@@ -2,18 +2,22 @@ package org.example;
 
 import org.apache.commons.lang3.NotImplementedException;
 import org.apache.xerces.dom.PSVIElementNSImpl;
-import org.apache.xerces.impl.xs.*;
+import org.apache.xerces.impl.xs.XSComplexTypeDecl;
+import org.apache.xerces.impl.xs.XSElementDecl;
+import org.apache.xerces.impl.xs.XSModelGroupImpl;
+import org.apache.xerces.impl.xs.XSParticleDecl;
 import org.apache.xerces.xs.ElementPSVI;
 import org.apache.xerces.xs.XSElementDeclaration;
 import org.apache.xerces.xs.XSModelGroup;
 import org.semanticweb.owlapi.model.*;
+import org.semanticweb.owlapi.vocab.OWL2Datatype;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xmlet.xsdparser.core.XsdParser;
-import uk.ac.manchester.cs.owl.owlapi.*;
-import org.semanticweb.owlapi.vocab.OWL2Datatype;
+import uk.ac.manchester.cs.owl.owlapi.OWLDataFactoryImpl;
+import uk.ac.manchester.cs.owl.owlapi.OWLObjectPropertyImpl;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -207,6 +211,8 @@ public class NamedIndividualBuilder {
                 addIntegerDataProperty(psviElem, childElementNamespace, childElementName);
             } else if (childElementTypeName.equalsIgnoreCase("boolean")) {
                 addBooleanDataProperty(psviElem, childElementNamespace, childElementName);
+            } else if (childElementTypeName.equalsIgnoreCase("anyURI")) {
+                addStringDataProperty(psviElem, childElementNamespace, childElementName);
             }
         } else if (childSchemaParticle.fValue instanceof XSElementDecl xsElementDecl1 && !
                 xsElementDecl1.fType.getNamespace().equals("http://www.w3.org/2001/XMLSchema")) {

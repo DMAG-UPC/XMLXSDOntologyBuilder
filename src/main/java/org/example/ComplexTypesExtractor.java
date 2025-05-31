@@ -1,6 +1,7 @@
 package org.example;
 
-import org.xmlet.xsdparser.xsdelements.*;
+import org.xmlet.xsdparser.xsdelements.XsdComplexType;
+import org.xmlet.xsdparser.xsdelements.XsdSchema;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -8,15 +8,16 @@
 
 package org.example.ontology;
 
+import jakarta.annotation.Generated;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.*;
+
+import javax.xml.namespace.QName;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.xml.namespace.QName;
-import jakarta.annotation.Generated;
-import jakarta.xml.bind.JAXBElement;
-import jakarta.xml.bind.annotation.*;
 
 
 /**

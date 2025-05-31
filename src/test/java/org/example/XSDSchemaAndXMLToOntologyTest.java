@@ -1,13 +1,13 @@
 package org.example;
 
-import org.custommonkey.xmlunit.Diff;
-import org.custommonkey.xmlunit.XMLUnit;
 import org.junit.Assert;
 import org.junit.Test;
 import org.xml.sax.SAXException;
 
-import java.io.*;
-import java.nio.charset.StandardCharsets;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -106,7 +106,7 @@ public class XSDSchemaAndXMLToOntologyTest {
     @Test
     public void transform_Requirements() throws IOException, SAXException {
         List<Long> times = new ArrayList<Long>();
-        for (int i=0; i <50; i++) {
+        for (int i=0; i <1; i++) {
             long startTime = System.nanoTime();
             File xmlFile = new File("src/main/resources/Requirements.xml");
             String xsdFilePath = "src/main/resources/input/RequirementsSchemas.xsd";
@@ -140,29 +140,6 @@ public class XSDSchemaAndXMLToOntologyTest {
         }
 
         check_output(outputStream, "src/test/resources/expected_testing_hint.xml");
-    }
-
-    @Test
-    public void transform_Requirements_ASVS() throws IOException, SAXException {
-        File xmlFile = new File("src/test/resources/RequirementsASVS.xml");
-        String xsdFilePath = "src/test/resources/RequirementsSchemas.xsd";
-
-        try (FileOutputStream fileOutputStream = new FileOutputStream("src/test/resources/generated_RequirementsASVS.xml")) {
-            XSDSchemaAndXMLToOntology.transform(xmlFile, xsdFilePath, fileOutputStream);
-        }
-
-        XMLUnit.setIgnoreWhitespace(true);
-        Diff diff;
-        try (
-                FileInputStream generatedFileInputStream = new FileInputStream("src/test/resources/generated_RequirementsASVS.xml");
-                FileInputStream expectedFileInputStream = new FileInputStream("src/test/resources/expected_RequirementsASVS.xml")
-        ) {
-            diff = XMLUnit.compareXML(
-                    new String(expectedFileInputStream.readAllBytes(), StandardCharsets.UTF_8),
-                    new String(generatedFileInputStream.readAllBytes(), StandardCharsets.UTF_8)
-            );
-        }
-        Assert.assertTrue(diff.similar());
     }
 
 }

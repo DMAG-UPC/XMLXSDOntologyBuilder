@@ -5,37 +5,21 @@ import org.custommonkey.xmlunit.Diff;
 import org.custommonkey.xmlunit.XMLUnit;
 import org.junit.Assert;
 import org.junit.Test;
+import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
-import org.semanticweb.owlapi.apibinding.OWLManager;
-import org.w3c.dom.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-import org.xmlet.xsdparser.core.XsdParser;
 
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 public class NamedIndividualBuilderTest {
-
-    /*@Test
-    public void build() {
-        final OWLOntologyManager manager = OWLManager.createConcurrentOWLOntologyManager();
-        CreationContext creationContext = new CreationContext();
-        try {
-            final OWLOntology ontology = manager.loadOntologyFromOntologyDocument(new File("src/test/resources/generated_rdf_OneComplexType.xml"));
-            XsdParser parserInstance = null;
-            NamedIndividualBuilder namedIndividualBuilder = new NamedIndividualBuilder("http://xmlns.com/foaf/0.1/", "rootType", parserInstance);
-            namedIndividualBuilder.addDataProperty(psviElem, "element_a", "test");
-            namedIndividualBuilder.addDataProperty(psviElem, "element_b", 1);
-            namedIndividualBuilder.build(ontology, creationContext);
-            try(FileOutputStream fileOutputStream = new FileOutputStream("src/test/resources/generated_populated_rdf_OneComplexType.xml")) {
-                ontology.saveOntology(fileOutputStream);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            Assert.fail();
-        }
-    }*/
 
     @Test
     public void buildFromXMLWithOneElement() {

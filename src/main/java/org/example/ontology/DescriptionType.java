@@ -67,7 +67,7 @@ public class DescriptionType {
      *
      * @return
      *     possible object is
-     *     {@link org.example.ontology.TypeType }
+     *     {@link TypeType }
      *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v3.0.0", date = "2024-03-14T12:52:08+01:00")
@@ -93,7 +93,7 @@ public class DescriptionType {
      *
      * @return
      *     possible object is
-     *     {@link org.example.ontology.FirstType }
+     *     {@link FirstType }
      *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v3.0.0", date = "2024-03-14T12:52:08+01:00")
@@ -119,7 +119,7 @@ public class DescriptionType {
      *
      * @return
      *     possible object is
-     *     {@link org.example.ontology.RestType }
+     *     {@link RestType }
      *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", comments = "JAXB RI v3.0.0", date = "2024-03-14T12:52:08+01:00")

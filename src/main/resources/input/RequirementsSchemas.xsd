@@ -35,7 +35,7 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
+
     <xs:complexType name="File">
         <xs:complexContent>
             <xs:extension base="ns:ComponentContent">
@@ -77,6 +77,7 @@
         <xs:sequence>
             <xs:element name="identifier_hint" type="xs:string" minOccurs="0"/>
             <xs:element name="name" type="xs:string"/>
+            <xs:element name="parent_content" type="ns:Content" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -133,6 +134,12 @@
             <xs:element name="record" type="ns:Record"/>
             <xs:element name="role" type="ns:Role"/>
             <xs:element name="password" type="ns:Password"/>
+            <xs:element name="change" type="ns:Change"/>
+            <xs:element name="control_over" type="ns:ControlOver"/>
+            <xs:element name="identification" type="ns:Identification"/>
+            <xs:element name="conformity" type="ns:Conformity"/>
+            <xs:element name="phase" type="ns:Phase"/>
+            <xs:element name="consent" type="ns:Consent"/>
         </xs:choice>
     </xs:complexType>
 
@@ -151,9 +158,11 @@
     <xs:complexType name="Record">
         <xs:complexContent>
             <xs:extension base="ns:AbstractContent">
-                <xs:sequence>
+                <xs:choice>
+                    <xs:annotation><xs:appinfo>Record_choice</xs:appinfo></xs:annotation>
                     <xs:element name="record_of" type="ns:Content"/>
-                </xs:sequence>
+                    <xs:element name="record_of_action" type="ns:action"/>
+                </xs:choice>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -204,7 +213,7 @@
         <xs:complexContent>
             <xs:extension base="ns:AbstractContent">
                 <xs:sequence>
-                    <xs:element name="causing_content" type="ns:Content"/>
+                    <xs:element name="causing_content" type="ns:Content" minOccurs="0"/>
                     <xs:element name="caused_content" type="ns:Content"/>
                 </xs:sequence>
             </xs:extension>
@@ -439,6 +448,56 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
+
+    <xs:complexType name="ControlOver">
+        <xs:complexContent>
+            <xs:extension base="ns:AbstractContent">
+                <xs:sequence>
+                    <xs:choice id="bla50">
+                        <xs:annotation><xs:appinfo>ControlOver_choice</xs:appinfo></xs:annotation>
+                        <xs:element name="control_over_content" type="ns:Content"/>
+                    </xs:choice>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="Consent">
+        <xs:complexContent>
+            <xs:extension base="ns:AbstractContent">
+                <xs:sequence>
+                    <xs:element name="consent_for_action" type="ns:action"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="Identification">
+        <xs:complexContent>
+            <xs:extension base="ns:AbstractContent">
+                <xs:sequence>
+                    <xs:choice id="bla51">
+                        <xs:annotation><xs:appinfo>Identification_choice</xs:appinfo></xs:annotation>
+                        <xs:element name="identified_content" type="ns:Content"/>
+                    </xs:choice>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="Conformity">
+        <xs:complexContent>
+            <xs:extension base="ns:AbstractContent">
+                <xs:sequence>
+                    <xs:element name="conformant_content" type="ns:Content"/>
+                    <xs:element name="conformant_with" type="ns:GeneralizedRequirement"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+
+
 
     <xs:complexType name="Policy">
         <xs:complexContent>
@@ -763,7 +822,9 @@
             <xs:element name="goal" minOccurs="0" type="ns:Goal"/>
             <xs:element name="trigger_implemented_asset" type="xs:string" minOccurs="0"/>
             <xs:element name="requirement_origin" type="ns:RequirementOrigins" maxOccurs="unbounded" minOccurs="0"/>
-            <xs:element name="invalidating_CVE" type="ns:CVE" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="invalidating_CVE_group" type="ns:CVE_Group" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="assurance_case" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="general" type="xs:boolean" minOccurs="1" default="false"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -793,6 +854,7 @@
                     <xs:annotation><xs:appinfo>Actor_choice</xs:appinfo></xs:annotation>
                     <xs:element name="responsible_of_content" type="ns:Content" minOccurs="0"/>
                     <xs:element name="responsible_of_documentation" type="ns:Documentation" minOccurs="0"/>
+                    <xs:element name="responsible_of_action" type="ns:action" minOccurs="0"/>
                 </xs:choice>
             </xs:extension>
         </xs:complexContent>
@@ -865,6 +927,16 @@
         </xs:complexContent>
     </xs:complexType>
 
+    <xs:complexType name="PlanningRequirement">
+        <xs:complexContent>
+            <xs:extension base="ns:Requirement">
+                <xs:sequence>
+                    <xs:element name="planned_action" type="ns:action"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
     <xs:complexType name="DefinitionRequirement">
         <xs:complexContent>
             <xs:extension base="ns:Requirement">
@@ -884,6 +956,7 @@
                         <xs:annotation><xs:appinfo>ImplementationRequirement_choice</xs:appinfo></xs:annotation>
                         <xs:element name="implemented" type="ns:Content"/>
                         <xs:element name="implemented_change" type="ns:Change"/>
+                        <xs:element name="implemented_action" type="ns:action"/>
                     </xs:choice>
                 </xs:sequence>
             </xs:extension>
@@ -994,11 +1067,17 @@
             <xs:element name="action_type">
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
+                        <xs:enumeration value="calibrating"/>
                         <xs:enumeration value="creating"/>
+                        <xs:enumeration value="cleaning"/>
                         <xs:enumeration value="coordinating"/>
                         <xs:enumeration value="archiving"/>
                         <xs:enumeration value="deviating"/>
                         <xs:enumeration value="delivering"/>
+                        <xs:enumeration value="demonstrating"/>
+                        <xs:enumeration value="documenting"/>
+                        <xs:enumeration value="defining"/>
+                        <xs:enumeration value="distributing"/>
                         <xs:enumeration value="accessing"/>
                         <xs:enumeration value="communicating"/>
                         <xs:enumeration value="verifying"/>
@@ -1006,6 +1085,7 @@
                         <xs:enumeration value="controlling"/>
                         <xs:enumeration value="validating"/>
                         <xs:enumeration value="monitoring"/>
+                        <xs:enumeration value="measuring"/>
                         <xs:enumeration value="reacting"/>
                         <xs:enumeration value="assessment"/>
                         <xs:enumeration value="managing"/>
@@ -1097,6 +1177,9 @@
                         <xs:enumeration value="storing"/>
                         <xs:enumeration value="reusing"/>
                         <xs:enumeration value="signing"/>
+                        <xs:enumeration value="evaluating"/>
+                        <xs:enumeration value="producing"/>
+                        <xs:enumeration value="purchasing"/>
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
@@ -1136,19 +1219,19 @@
     </xs:complexType>
 
     <xs:complexType name="GoalToAlertType">
-            <xs:sequence>
-                <xs:element name="identifier_hint" type="xs:string" minOccurs="0"/>
-                <xs:choice id="bla19">
-                    <xs:annotation><xs:appinfo>GoalToAlertType_communicated_choice</xs:appinfo></xs:annotation>
-                    <xs:element name="communicated_content" type="ns:Content"/>
-                    <xs:element name="communicated_event" type="ns:Event"/>
-                </xs:choice>
-                <xs:choice id="bla18">
-                    <xs:annotation><xs:appinfo>GoalToAlertType_recipient_choice</xs:appinfo></xs:annotation>
-                    <xs:element name="recipient" type="ns:Actor" maxOccurs="unbounded"/>
-                    <xs:element name="recipient_component" type="ns:ComponentContent" maxOccurs="unbounded"/>
-                </xs:choice>
-            </xs:sequence>
+        <xs:sequence>
+            <xs:element name="identifier_hint" type="xs:string" minOccurs="0"/>
+            <xs:choice id="bla19">
+                <xs:annotation><xs:appinfo>GoalToAlertType_communicated_choice</xs:appinfo></xs:annotation>
+                <xs:element name="communicated_content" type="ns:Content"/>
+                <xs:element name="communicated_event" type="ns:Event"/>
+            </xs:choice>
+            <xs:choice id="bla18">
+                <xs:annotation><xs:appinfo>GoalToAlertType_recipient_choice</xs:appinfo></xs:annotation>
+                <xs:element name="recipient" type="ns:Actor" maxOccurs="unbounded"/>
+                <xs:element name="recipient_component" type="ns:ComponentContent" maxOccurs="unbounded"/>
+            </xs:choice>
+        </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="GoalToAutoPerformActionType">
@@ -1215,7 +1298,10 @@
                     <xs:choice id="bla16">
                         <xs:annotation><xs:appinfo>Means_For_choice</xs:appinfo></xs:annotation>
                         <xs:element name="action" type="ns:action"/>
+                        <xs:element name="process" type="ns:Process"/>
                         <xs:element name="goal" type="ns:Goal"/>
+                        <xs:element name="avoided_event" type="ns:Event"/>
+                        <xs:element name="content" type="ns:Content"/>
                     </xs:choice>
                     <xs:element name="author" type="ns:Author" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="propietary" type="xs:boolean" default="false" minOccurs="0"/>
@@ -1234,6 +1320,7 @@
                     <xs:element name="requirement_on" type="ns:Content" minOccurs="0"/>
                     <xs:element name="requirement_for" type="ns:action" minOccurs="0"/>
                     <xs:element name="requirement_from" type="ns:Content" minOccurs="0"/>
+                    <xs:element name="author" type="ns:Actor" minOccurs="0"/>
                     <xs:element name="minimal" type="xs:boolean" minOccurs="0" default="false"/>
                     <xs:element name="security" type="xs:boolean" minOccurs="0" default="false"/>
                 </xs:sequence>
@@ -1249,6 +1336,8 @@
                     <xs:element name="needs_update" type="xs:boolean" default="false" minOccurs="0"/>
                     <xs:element name="needs_preventive_maintenance" type="xs:boolean" default="false" minOccurs="0"/>
                     <xs:element name="susceptible" type="xs:boolean" default="false" minOccurs="0"/>
+                    <xs:element name="nonconforming" type="xs:boolean" default="false" minOccurs="0"/>
+                    <xs:element name="reworked" type="xs:boolean" default="false" minOccurs="0"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -1346,6 +1435,7 @@
                 <xs:choice id="bla13">
                     <xs:annotation><xs:appinfo>ManagingRequirement_choice</xs:appinfo></xs:annotation>
                     <xs:element name="managed_content" type="ns:Content"/>
+                    <xs:element name="managed_change" type="ns:Change"/>
                     <xs:element name="managed_event" type="ns:Event" maxOccurs="unbounded"/>
                 </xs:choice>
             </xs:extension>
@@ -1572,6 +1662,7 @@
                 <xs:element name="avoiding_event_design_requirement" type="ns:AvoidingEventDesignRequirement"/>
                 <xs:element name="definition_requirement" type="ns:DefinitionRequirement"/>
                 <xs:element name="maintenance_requirement" type="ns:MaintenanceRequirement"/>
+                <xs:element name="planning_requirement" type="ns:PlanningRequirement"/>
                 <xs:element name="implementation_requirement" type="ns:ImplementationRequirement"/>
                 <xs:element name="communication_requirement" type="ns:CommunicationRequirement"/>
                 <xs:element name="verification_requirement" type="ns:VerificationRequirement"/>
@@ -1658,6 +1749,13 @@
         <xs:sequence>
             <xs:element name="identifier_hint" type="xs:string" minOccurs="0"/>
             <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CVE_Group">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="CVE" type="ns:CVE" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>
