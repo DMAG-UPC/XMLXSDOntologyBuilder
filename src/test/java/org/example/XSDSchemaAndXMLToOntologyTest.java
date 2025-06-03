@@ -127,6 +127,29 @@ public class XSDSchemaAndXMLToOntologyTest {
     }
 
     @Test
+    public void transform_RequirementsWithCVEs() throws IOException, SAXException {
+        List<Long> times = new ArrayList<Long>();
+        for (int i=0; i <20; i++) {
+            long startTime = System.nanoTime();
+            File xmlFile = new File("src/main/resources/RequirementsWithCVEs.xml");
+            String xsdFilePath = "src/main/resources/input/RequirementsSchemas.xsd";
+
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            XSDSchemaAndXMLToOntology.transform(xmlFile, xsdFilePath, outputStream);
+
+            try(FileWriter generatedFileWriter = new FileWriter("src/test/resources/generated_populated_requirements_with_CVEs.xml")){
+                generatedFileWriter.write(outputStream.toString());
+            }
+
+            check_output(outputStream, "src/test/resources/expected_populated_requirements_with_CVEs.xml");
+            long endTime = System.nanoTime() - startTime;
+            times.add(endTime);
+            System.out.println(i+"\t"+endTime);
+        }
+        times.forEach(System.out::println);
+    }
+
+    @Test
     public void transform_Requirement_with_hint() throws IOException, SAXException {
         File xmlFile = new File("src/test/resources/Testing_hint.xml");
         String xsdFilePath = "src/main/resources/input/RequirementsSchemas.xsd";
