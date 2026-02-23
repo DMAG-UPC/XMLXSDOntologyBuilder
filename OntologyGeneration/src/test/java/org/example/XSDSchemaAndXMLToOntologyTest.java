@@ -1,13 +1,13 @@
 package org.example;
 
+import org.custommonkey.xmlunit.Diff;
+import org.custommonkey.xmlunit.XMLUnit;
 import org.junit.Assert;
 import org.junit.Test;
 import org.xml.sax.SAXException;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +32,7 @@ public class XSDSchemaAndXMLToOntologyTest {
         String xsdFilePath = "src/test/resources/Testing_OneComplexType.xsd";
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        XSDSchemaAndXMLToOntology.transform(xmlFile, xsdFilePath, outputStream);
+        XSDSchemaAndXMLToOntology.transform(xmlFile.getPath(), xsdFilePath, outputStream);
 
         check_output(outputStream, "src/test/resources/expected_populated_rdf_OneComplexTypeTwoEntries.xml");
     }
@@ -43,7 +43,7 @@ public class XSDSchemaAndXMLToOntologyTest {
         String xsdFilePath = "src/test/resources/Testing_TwoComplexTypes.xsd";
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        XSDSchemaAndXMLToOntology.transform(xmlFile, xsdFilePath, outputStream);
+        XSDSchemaAndXMLToOntology.transform(xmlFile.getPath(), xsdFilePath, outputStream);
 
         check_output(outputStream, "src/test/resources/expected_populated_rdf_TwoComplexTypes.xml");
     }
@@ -54,7 +54,7 @@ public class XSDSchemaAndXMLToOntologyTest {
         String xsdFilePath = "src/test/resources/Testing_ChoiceComplexTypes.xsd";
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        XSDSchemaAndXMLToOntology.transform(xmlFile, xsdFilePath, outputStream);
+        XSDSchemaAndXMLToOntology.transform(xmlFile.getPath(), xsdFilePath, outputStream);
 
         check_output(outputStream, "src/test/resources/expected_populated_ChoiceComplexType.xml");
     }
@@ -65,7 +65,7 @@ public class XSDSchemaAndXMLToOntologyTest {
         String xsdFilePath = "src/test/resources/TestingSequence.xsd";
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        XSDSchemaAndXMLToOntology.transform(xmlFile, xsdFilePath, outputStream);
+        XSDSchemaAndXMLToOntology.transform(xmlFile.getPath(), xsdFilePath, outputStream);
 
         check_output(outputStream, "src/test/resources/expected_populated_sequence.xml");
     }
@@ -76,7 +76,7 @@ public class XSDSchemaAndXMLToOntologyTest {
         String xsdFilePath = "src/test/resources/TestingSequence.xsd";
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        XSDSchemaAndXMLToOntology.transform(xmlFile, xsdFilePath, outputStream);
+        XSDSchemaAndXMLToOntology.transform(xmlFile.getPath(), xsdFilePath, outputStream);
 
         check_output(outputStream, "src/test/resources/expected_populated_sequenceWithDuplicateEntry.xml");
     }
@@ -87,7 +87,7 @@ public class XSDSchemaAndXMLToOntologyTest {
         String xsdFilePath = "src/test/resources/Testing_ExtendedType.xsd";
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        XSDSchemaAndXMLToOntology.transform(xmlFile, xsdFilePath, outputStream);
+        XSDSchemaAndXMLToOntology.transform(xmlFile.getPath(), xsdFilePath, outputStream);
 
         check_output(outputStream, "src/test/resources/expected_populated_ExtendedType.xml");
     }
@@ -98,7 +98,7 @@ public class XSDSchemaAndXMLToOntologyTest {
         String xsdFilePath = "src/test/resources/Testing_minimum_requirements.xsd";
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        XSDSchemaAndXMLToOntology.transform(xmlFile, xsdFilePath, outputStream);
+        XSDSchemaAndXMLToOntology.transform(xmlFile.getPath(), xsdFilePath, outputStream);
 
         check_output(outputStream, "src/test/resources/expected_populated_minimum_requirements.xml");
     }
@@ -112,7 +112,7 @@ public class XSDSchemaAndXMLToOntologyTest {
             String xsdFilePath = "src/main/resources/input/RequirementsSchemas.xsd";
 
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            XSDSchemaAndXMLToOntology.transform(xmlFile, xsdFilePath, outputStream);
+            XSDSchemaAndXMLToOntology.transform(xmlFile.getPath(), xsdFilePath, outputStream);
 
             try(FileWriter generatedFileWriter = new FileWriter("src/test/resources/generated_populated_requirements.xml")){
                 generatedFileWriter.write(outputStream.toString());
@@ -127,21 +127,21 @@ public class XSDSchemaAndXMLToOntologyTest {
     }
 
     @Test
-    public void transform_RequirementsWithCVEs() throws IOException, SAXException {
+    public void transform_RequirementsWithDates() throws IOException, SAXException {
         List<Long> times = new ArrayList<Long>();
-        for (int i=0; i <20; i++) {
+        for (int i=0; i <1; i++) {
             long startTime = System.nanoTime();
-            File xmlFile = new File("src/main/resources/RequirementsWithCVEs.xml");
+            File xmlFile = new File("src/test/resources/expected_requirements_with_dates.xml");
             String xsdFilePath = "src/main/resources/input/RequirementsSchemas.xsd";
 
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            XSDSchemaAndXMLToOntology.transform(xmlFile, xsdFilePath, outputStream);
+            XSDSchemaAndXMLToOntology.transform(xmlFile.getPath(), xsdFilePath, outputStream);
 
-            try(FileWriter generatedFileWriter = new FileWriter("src/test/resources/generated_populated_requirements_with_CVEs.xml")){
+            try(FileWriter generatedFileWriter = new FileWriter("src/test/resources/generated_populated_requirements_with_dates.owl")){
                 generatedFileWriter.write(outputStream.toString());
             }
 
-            check_output(outputStream, "src/test/resources/expected_populated_requirements_with_CVEs.xml");
+            check_output(outputStream, "src/test/resources/expected_populated_requirements_with_dates.owl");
             long endTime = System.nanoTime() - startTime;
             times.add(endTime);
             System.out.println(i+"\t"+endTime);
@@ -155,7 +155,7 @@ public class XSDSchemaAndXMLToOntologyTest {
         String xsdFilePath = "src/main/resources/input/RequirementsSchemas.xsd";
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        XSDSchemaAndXMLToOntology.transform(xmlFile, xsdFilePath, outputStream);
+        XSDSchemaAndXMLToOntology.transform(xmlFile.getPath(), xsdFilePath, outputStream);
 
 
         try(FileWriter generatedFileWriter = new FileWriter("src/test/resources/generated_populated_requirements_hint.xml")){
@@ -163,6 +163,29 @@ public class XSDSchemaAndXMLToOntologyTest {
         }
 
         check_output(outputStream, "src/test/resources/expected_testing_hint.xml");
+    }
+
+    @Test
+    public void transform_Requirements_ASVS() throws IOException, SAXException {
+        File xmlFile = new File("src/test/resources/RequirementsASVS.xml");
+        String xsdFilePath = "src/test/resources/RequirementsSchemas.xsd";
+
+        try (FileOutputStream fileOutputStream = new FileOutputStream("src/test/resources/generated_RequirementsASVS.xml")) {
+            XSDSchemaAndXMLToOntology.transform(xmlFile.getPath(), xsdFilePath, fileOutputStream);
+        }
+
+        XMLUnit.setIgnoreWhitespace(true);
+        Diff diff;
+        try (
+                FileInputStream generatedFileInputStream = new FileInputStream("src/test/resources/generated_RequirementsASVS.xml");
+                FileInputStream expectedFileInputStream = new FileInputStream("src/test/resources/expected_RequirementsASVS.xml")
+        ) {
+            diff = XMLUnit.compareXML(
+                    new String(expectedFileInputStream.readAllBytes(), StandardCharsets.UTF_8),
+                    new String(generatedFileInputStream.readAllBytes(), StandardCharsets.UTF_8)
+            );
+        }
+        Assert.assertTrue(diff.similar());
     }
 
 }

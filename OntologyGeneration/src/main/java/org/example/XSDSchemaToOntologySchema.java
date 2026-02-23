@@ -293,7 +293,10 @@ public class XSDSchemaToOntologySchema {
         } else if (type_s.equals("integer") || type_s.equals("int")){
             type.getOtherAttributes().put(resourceQName, "http://www.w3.org/2002/07/owl#DatatypeProperty");
             range.getOtherAttributes().put(resourceQName, "http://www.w3.org/2001/XMLSchema#int");
-        } else {
+        } else if (type_s.equals("dateTime")){
+            type.getOtherAttributes().put(resourceQName, "http://www.w3.org/2002/07/owl#DatatypeProperty");
+            range.getOtherAttributes().put(resourceQName, "http://www.w3.org/2001/XMLSchema#dateTime");
+        }else {
             type.getOtherAttributes().put(resourceQName, "http://www.w3.org/2002/07/owl#ObjectProperty");
             range.getOtherAttributes().put(resourceQName, "http://xmlns.com/foaf/0.1/" + type_s);
         }
@@ -371,7 +374,8 @@ public class XSDSchemaToOntologySchema {
     private static boolean isDataProperty(RangeType type_range) {
         return type_range.getOtherAttributes().values().iterator().next().equals("http://www.w3.org/2000/01/rdf-schema#Literal") ||
                 type_range.getOtherAttributes().values().iterator().next().equals("http://www.w3.org/2001/XMLSchema#boolean") ||
-                type_range.getOtherAttributes().values().iterator().next().equals("http://www.w3.org/2001/XMLSchema#int");
+                type_range.getOtherAttributes().values().iterator().next().equals("http://www.w3.org/2001/XMLSchema#int") ||
+                type_range.getOtherAttributes().values().iterator().next().equals("http://www.w3.org/2001/XMLSchema#dateTime");
     }
 
     private static void creating_data_or_object_property(String prop_clave, ObjectFactory objectFactory, RangeType type_range, List<DescriptionType> desc, Map<QName, String> otherAttributes, List<Object> any) {

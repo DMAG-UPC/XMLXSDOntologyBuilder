@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:RDF xmlns:ns1="http://www.w3.org/2000/01/rdf-schema#" xmlns:ns2="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:ns4="http://www.w3.org/2002/07/owl#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ https://danielnaro.github.io/OWL_RDF_schemas/Ontology_2_dc.xsd  http://www.w3.org/2003/06/sw-vocab-status/ns# https://danielnaro.github.io/OWL_RDF_schemas/Ontology_2_rdf.xsd">
+    <ns4:Ontology xmlns:ns6="http://purl.org/dc/elements/1.1/" ns2:about="http://xmlns.com/foaf/0.1/" ns6:description="The Friend of a Friend (FOAF) RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language." ns6:title="Friend of a Friend (FOAF) vocabulary"/>
+    <ns4:AnnotationProperty ns2:about="http://xmlns.com/wot/0.1/assurance"/>
+    <ns4:AnnotationProperty ns2:about="http://xmlns.com/wot/0.1/src_assurance"/>
+    <ns4:AnnotationProperty ns2:about="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"/>
+    <ns4:AnnotationProperty ns2:about="http://purl.org/dc/elements/1.1/description"/>
+    <ns4:AnnotationProperty ns2:about="http://purl.org/dc/elements/1.1/title"/>
+    <ns4:AnnotationProperty ns2:about="http://purl.org/dc/elements/1.1/date"/>
+    <ns4:Class ns2:about="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <ns1:Class ns1:label="Requirement" ns2:about="http://xmlns.com/foaf/0.1/Requirement">
+        <ns2:type ns2:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <ns1:isDefinedBy ns2:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns1:Class>
+    <ns1:Class ns1:label="Content" ns2:about="http://xmlns.com/foaf/0.1/Content">
+        <ns2:type ns2:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <ns1:isDefinedBy ns2:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns1:Class>
+    <ns1:Class ns1:label="Actor" ns2:about="http://xmlns.com/foaf/0.1/Actor">
+        <ns2:type ns2:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <ns1:isDefinedBy ns2:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns1:Class>
+    <ns2:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="actor" ns1:comment="actor" ns6:term_status="testing" ns2:about="http://xmlns.com/foaf/0.1/actor">
+        <ns2:type ns2:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <ns1:domain ns2:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+        <ns1:range ns2:resource="http://xmlns.com/foaf/0.1/Actor"/>
+        <ns1:isDefinedBy ns2:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns2:Property>
+    <ns4:DatatypeProperty xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="arbitrary_value" ns1:comment="arbitrary_value" ns6:term_status="testing" ns2:about="http://xmlns.com/foaf/0.1/arbitrary_value">
+        <ns1:domain>
+            <ns4:Class>
+                <ns4:unionOf ns2:parseType="Collection">
+                    <ns2:Description ns2:about="http://xmlns.com/foaf/0.1/Content"/>
+                    <ns2:Description ns2:about="http://xmlns.com/foaf/0.1/Actor"/>
+                </ns4:unionOf>
+            </ns4:Class>
+        </ns1:domain>
+        <ns1:range ns2:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </ns4:DatatypeProperty>
+    <ns4:DatatypeProperty xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="name" ns1:comment="name" ns6:term_status="testing" ns2:about="http://xmlns.com/foaf/0.1/name">
+        <ns1:domain>
+            <ns4:Class>
+                <ns4:unionOf ns2:parseType="Collection">
+                    <ns2:Description ns2:about="http://xmlns.com/foaf/0.1/Requirement"/>
+                    <ns2:Description ns2:about="http://xmlns.com/foaf/0.1/Content"/>
+                    <ns2:Description ns2:about="http://xmlns.com/foaf/0.1/Actor"/>
+                </ns4:unionOf>
+            </ns4:Class>
+        </ns1:domain>
+        <ns1:range ns2:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </ns4:DatatypeProperty>
+    <ns2:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="related_content" ns1:comment="related_content" ns6:term_status="testing" ns2:about="http://xmlns.com/foaf/0.1/related_content">
+        <ns2:type ns2:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <ns1:domain ns2:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+        <ns1:range ns2:resource="http://xmlns.com/foaf/0.1/Content"/>
+        <ns1:isDefinedBy ns2:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns2:Property>
+</ns2:RDF>

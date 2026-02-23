@@ -213,6 +213,8 @@ public class NamedIndividualBuilder {
                 addBooleanDataProperty(psviElem, childElementNamespace, childElementName);
             } else if (childElementTypeName.equalsIgnoreCase("anyURI")) {
                 addStringDataProperty(psviElem, childElementNamespace, childElementName);
+            } else if (childElementTypeName.equalsIgnoreCase("dateTime")) {
+                addStringDataProperty(psviElem, childElementNamespace, childElementName);
             }
         } else if (childSchemaParticle.fValue instanceof XSElementDecl xsElementDecl1 && !
                 xsElementDecl1.fType.getNamespace().equals("http://www.w3.org/2001/XMLSchema")) {

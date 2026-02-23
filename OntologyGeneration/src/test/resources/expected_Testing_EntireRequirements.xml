@@ -20,6 +20,10 @@
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
         <ns1:subClassOf ns3:resource="http://xmlns.com/foaf/0.1/GeneralEvent"/>
     </ns1:Class>
+    <ns1:Class ns1:label="FirstUsageEvent" ns3:about="http://xmlns.com/foaf/0.1/FirstUsageEvent">
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <ns1:subClassOf ns3:resource="http://xmlns.com/foaf/0.1/GeneralEvent"/>
+    </ns1:Class>
     <ns1:Class ns1:label="GoalToComplyWithSpecificationType" ns3:about="http://xmlns.com/foaf/0.1/GoalToComplyWithSpecificationType">
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
         <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
@@ -42,7 +46,7 @@
     </ns1:Class>
     <ns1:Class ns1:label="AvoidingEventDesignRequirement" ns3:about="http://xmlns.com/foaf/0.1/AvoidingEventDesignRequirement">
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <ns1:subClassOf ns3:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+        <ns1:subClassOf ns3:resource="http://xmlns.com/foaf/0.1/AvoidingEventRequirement"/>
     </ns1:Class>
     <ns1:Class ns1:label="TradeOff" ns3:about="http://xmlns.com/foaf/0.1/TradeOff">
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -108,6 +112,10 @@
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
         <ns1:subClassOf ns3:resource="http://xmlns.com/foaf/0.1/Requirement"/>
     </ns1:Class>
+    <ns1:Class ns1:label="AvoidingEventRequirement" ns3:about="http://xmlns.com/foaf/0.1/AvoidingEventRequirement">
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <ns1:subClassOf ns3:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+    </ns1:Class>
     <ns1:Class ns1:label="Author" ns3:about="http://xmlns.com/foaf/0.1/Author">
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
         <ns1:subClassOf ns3:resource="http://xmlns.com/foaf/0.1/AbstractContent"/>
@@ -119,6 +127,10 @@
     <ns1:Class ns1:label="VerificationRequirement" ns3:about="http://xmlns.com/foaf/0.1/VerificationRequirement">
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
         <ns1:subClassOf ns3:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+    </ns1:Class>
+    <ns1:Class ns1:label="Right" ns3:about="http://xmlns.com/foaf/0.1/Right">
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <ns1:subClassOf ns3:resource="http://xmlns.com/foaf/0.1/AbstractContent"/>
     </ns1:Class>
     <ns1:Class ns1:label="Practice" ns3:about="http://xmlns.com/foaf/0.1/Practice">
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -192,13 +204,17 @@
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
         <ns1:subClassOf ns3:resource="http://xmlns.com/foaf/0.1/Requirement"/>
     </ns1:Class>
+    <ns1:Class ns1:label="RequestEvent" ns3:about="http://xmlns.com/foaf/0.1/RequestEvent">
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <ns1:subClassOf ns3:resource="http://xmlns.com/foaf/0.1/GeneralEvent"/>
+    </ns1:Class>
     <ns1:Class ns1:label="OrganizationRequirement" ns3:about="http://xmlns.com/foaf/0.1/OrganizationRequirement">
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
         <ns1:subClassOf ns3:resource="http://xmlns.com/foaf/0.1/Requirement"/>
     </ns1:Class>
     <ns1:Class ns1:label="Specification" ns3:about="http://xmlns.com/foaf/0.1/Specification">
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+        <ns1:subClassOf ns3:resource="http://xmlns.com/foaf/0.1/AbstractContent"/>
     </ns1:Class>
     <ns1:Class ns1:label="PlanningRequirement" ns3:about="http://xmlns.com/foaf/0.1/PlanningRequirement">
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -255,6 +271,10 @@
     <ns1:Class ns1:label="DocumentationRequirement" ns3:about="http://xmlns.com/foaf/0.1/DocumentationRequirement">
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
         <ns1:subClassOf ns3:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+    </ns1:Class>
+    <ns1:Class ns1:label="DeploymentEvent" ns3:about="http://xmlns.com/foaf/0.1/DeploymentEvent">
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <ns1:subClassOf ns3:resource="http://xmlns.com/foaf/0.1/GeneralEvent"/>
     </ns1:Class>
     <ns1:Class ns1:label="Threat" ns3:about="http://xmlns.com/foaf/0.1/Threat">
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -319,6 +339,10 @@
     <ns1:Class ns1:label="AbstractAction" ns3:about="http://xmlns.com/foaf/0.1/AbstractAction">
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
         <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns1:Class>
+    <ns1:Class ns1:label="ReceptionEvent" ns3:about="http://xmlns.com/foaf/0.1/ReceptionEvent">
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <ns1:subClassOf ns3:resource="http://xmlns.com/foaf/0.1/GeneralEvent"/>
     </ns1:Class>
     <ns1:Class ns1:label="ImplementationRequirement" ns3:about="http://xmlns.com/foaf/0.1/ImplementationRequirement">
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -400,6 +424,10 @@
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
         <ns1:subClassOf ns3:resource="http://xmlns.com/foaf/0.1/Requirement"/>
     </ns1:Class>
+    <ns1:Class ns1:label="AuthorizationEvent" ns3:about="http://xmlns.com/foaf/0.1/AuthorizationEvent">
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <ns1:subClassOf ns3:resource="http://xmlns.com/foaf/0.1/GeneralEvent"/>
+    </ns1:Class>
     <ns1:Class ns1:label="ClauseOrigin" ns3:about="http://xmlns.com/foaf/0.1/ClauseOrigin">
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
         <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
@@ -439,6 +467,10 @@
     <ns1:Class ns1:label="Standard" ns3:about="http://xmlns.com/foaf/0.1/Standard">
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
         <ns1:subClassOf ns3:resource="http://xmlns.com/foaf/0.1/AbstractContent"/>
+    </ns1:Class>
+    <ns1:Class ns1:label="StartOfSupplyEvent" ns3:about="http://xmlns.com/foaf/0.1/StartOfSupplyEvent">
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <ns1:subClassOf ns3:resource="http://xmlns.com/foaf/0.1/GeneralEvent"/>
     </ns1:Class>
     <ns1:Class ns1:label="DefenceAgainstRequirement" ns3:about="http://xmlns.com/foaf/0.1/DefenceAgainstRequirement">
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -707,456 +739,480 @@
                 <ns2:oneOf>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>calibrating</ns3:first>
+                        <ns3:first>engaging</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>creating</ns3:first>
+<ns3:first>calibrating</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>cleaning</ns3:first>
+        <ns3:first>creating</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>coordinating</ns3:first>
+                <ns3:first>cleaning</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>archiving</ns3:first>
+                        <ns3:first>coordinating</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>deviating</ns3:first>
+<ns3:first>archiving</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>delivering</ns3:first>
+        <ns3:first>deviating</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>demonstrating</ns3:first>
+                <ns3:first>delivering</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>documenting</ns3:first>
+                        <ns3:first>demonstrating</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>defining</ns3:first>
+<ns3:first>documenting</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>distributing</ns3:first>
+        <ns3:first>defining</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>accessing</ns3:first>
+                <ns3:first>distributing</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>communicating</ns3:first>
+                        <ns3:first>disregarding</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>verifying</ns3:first>
+<ns3:first>accessing</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>pairing</ns3:first>
+        <ns3:first>communicating</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>controlling</ns3:first>
+                <ns3:first>verifying</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>validating</ns3:first>
+                        <ns3:first>pairing</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>monitoring</ns3:first>
+<ns3:first>controlling</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>measuring</ns3:first>
+        <ns3:first>validating</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>reacting</ns3:first>
+                <ns3:first>monitoring</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>assessment</ns3:first>
+                        <ns3:first>measuring</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>managing</ns3:first>
+<ns3:first>reacting</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>handling</ns3:first>
+        <ns3:first>assessment</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>analysing</ns3:first>
+                <ns3:first>managing</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>publishing</ns3:first>
+                        <ns3:first>handling</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>reducing</ns3:first>
+<ns3:first>analysing</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>recording</ns3:first>
+        <ns3:first>publishing</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>authenticating</ns3:first>
+                <ns3:first>reducing</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>exchaning information</ns3:first>
+                        <ns3:first>recording</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>exchanging clinical information</ns3:first>
+<ns3:first>authenticating</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>exchanging identification information</ns3:first>
+        <ns3:first>exchaning information</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>exchanging technical information</ns3:first>
+                <ns3:first>exchanging clinical information</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>removing</ns3:first>
+                        <ns3:first>exchanging identification information</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>protecting</ns3:first>
+<ns3:first>exchanging technical information</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>configuring</ns3:first>
+        <ns3:first>removing</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>determining</ns3:first>
+                <ns3:first>protecting</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>resolving</ns3:first>
+                        <ns3:first>configuring</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>restricting usage</ns3:first>
+<ns3:first>determining</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>securing</ns3:first>
+        <ns3:first>resolving</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>allocating resources</ns3:first>
+                <ns3:first>restricting usage</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>maintaining</ns3:first>
+                        <ns3:first>securing</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>reviewing</ns3:first>
+<ns3:first>allocating resources</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>assigning</ns3:first>
+        <ns3:first>maintaining</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>engineering</ns3:first>
+                <ns3:first>reviewing</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>executing</ns3:first>
+                        <ns3:first>assigning</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>training</ns3:first>
+<ns3:first>engineering</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>updating</ns3:first>
+        <ns3:first>executing</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>processing</ns3:first>
+                <ns3:first>training</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>deleting</ns3:first>
+                        <ns3:first>updating</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>rectifying</ns3:first>
+<ns3:first>processing</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>logging</ns3:first>
+        <ns3:first>deleting</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>auditing</ns3:first>
+                <ns3:first>rectifying</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>preventing</ns3:first>
+                        <ns3:first>logging</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>detecting</ns3:first>
+<ns3:first>auditing</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>granting</ns3:first>
+        <ns3:first>preventing</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>change state</ns3:first>
+                <ns3:first>detecting</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>withdrawing</ns3:first>
+                        <ns3:first>granting</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>using</ns3:first>
+<ns3:first>change state</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>provisioning</ns3:first>
+        <ns3:first>withdrawing</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>bootstraping</ns3:first>
+                <ns3:first>using</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>backing up</ns3:first>
+                        <ns3:first>provisioning</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>decommissioning</ns3:first>
+<ns3:first>bootstraping</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>testing</ns3:first>
+        <ns3:first>backing up</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>mitigating</ns3:first>
+                <ns3:first>decommissioning</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>receiving</ns3:first>
+                        <ns3:first>testing</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>restoring</ns3:first>
+<ns3:first>mitigating</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>resetting</ns3:first>
+        <ns3:first>receiving</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>locking</ns3:first>
+                <ns3:first>restoring</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>blocking</ns3:first>
+                        <ns3:first>resetting</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>searching</ns3:first>
+<ns3:first>locking</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>requesting</ns3:first>
+        <ns3:first>blocking</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>sanitizing</ns3:first>
+                <ns3:first>searching</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>revoking</ns3:first>
+                        <ns3:first>requesting</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>stopping</ns3:first>
+<ns3:first>sanitizing</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>starting</ns3:first>
+        <ns3:first>revoking</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>viewing</ns3:first>
+                <ns3:first>stopping</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>authorizing</ns3:first>
+                        <ns3:first>starting</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>installing</ns3:first>
+<ns3:first>viewing</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>falling back</ns3:first>
+        <ns3:first>authorizing</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>reporting</ns3:first>
+                <ns3:first>installing</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>ensuring</ns3:first>
+                        <ns3:first>falling back</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>deterring</ns3:first>
+<ns3:first>reporting</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>disclosing</ns3:first>
+        <ns3:first>ensuring</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>achieving</ns3:first>
+                <ns3:first>deterring</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>assuring</ns3:first>
+                        <ns3:first>disclosing</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>collecting</ns3:first>
+<ns3:first>achieving</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>identification</ns3:first>
+        <ns3:first>assuring</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>checking</ns3:first>
+                <ns3:first>collecting</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>rebuilding</ns3:first>
+                        <ns3:first>identification</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>deploying</ns3:first>
+<ns3:first>checking</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>supporting</ns3:first>
+        <ns3:first>rebuilding</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>registering</ns3:first>
+                <ns3:first>deploying</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>accepting</ns3:first>
+                        <ns3:first>supporting</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>treating as</ns3:first>
+<ns3:first>registering</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>naming</ns3:first>
+        <ns3:first>accepting</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>tracking</ns3:first>
+                <ns3:first>treating as</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>masking</ns3:first>
+                        <ns3:first>naming</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>replacing</ns3:first>
+<ns3:first>tracking</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>reinstalling</ns3:first>
+        <ns3:first>masking</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>aligning</ns3:first>
+                <ns3:first>replacing</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>integrating</ns3:first>
+                        <ns3:first>reinstalling</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>inventoring</ns3:first>
+<ns3:first>aligning</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>staffing</ns3:first>
+        <ns3:first>integrating</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>migrating</ns3:first>
+                <ns3:first>inventoring</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>enumeration</ns3:first>
+                        <ns3:first>staffing</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>throttling</ns3:first>
+<ns3:first>migrating</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>caching</ns3:first>
+        <ns3:first>enumeration</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>storing</ns3:first>
+                <ns3:first>throttling</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>reusing</ns3:first>
+                        <ns3:first>caching</ns3:first>
                         <ns3:rest>
                             <ns3:Description>
 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-<ns3:first>signing</ns3:first>
+<ns3:first>storing</ns3:first>
 <ns3:rest>
     <ns3:Description>
         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-        <ns3:first>evaluating</ns3:first>
+        <ns3:first>reusing</ns3:first>
         <ns3:rest>
             <ns3:Description>
                 <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                <ns3:first>producing</ns3:first>
+                <ns3:first>signing</ns3:first>
                 <ns3:rest>
                     <ns3:Description>
                         <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <ns3:first>purchasing</ns3:first>
+                        <ns3:first>evaluating</ns3:first>
+                        <ns3:rest>
+                            <ns3:Description>
+<ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+<ns3:first>producing</ns3:first>
+<ns3:rest>
+    <ns3:Description>
+        <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+        <ns3:first>purchasing</ns3:first>
+        <ns3:rest>
+            <ns3:Description>
+                <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                <ns3:first>objecting</ns3:first>
+                <ns3:rest>
+                    <ns3:Description>
+                        <ns3:type ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <ns3:first>implementing</ns3:first>
                         <ns3:rest ns3:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </ns3:Description>
+                </ns3:rest>
+            </ns3:Description>
+        </ns3:rest>
+    </ns3:Description>
+</ns3:rest>
+                            </ns3:Description>
+                        </ns3:rest>
                     </ns3:Description>
                 </ns3:rest>
             </ns3:Description>
@@ -1475,6 +1531,10 @@
                     </ns2:Restriction>
                     <ns2:Restriction>
                         <ns2:onProperty ns3:resource="http://xmlns.com/foaf/0.1/evolution_choice"/>
+                        <ns2:someValuesFrom ns3:resource="http://xmlns.com/foaf/0.1/action"/>
+                    </ns2:Restriction>
+                    <ns2:Restriction>
+                        <ns2:onProperty ns3:resource="http://xmlns.com/foaf/0.1/evolution_choice"/>
                         <ns2:someValuesFrom ns3:resource="http://xmlns.com/foaf/0.1/Change"/>
                     </ns2:Restriction>
                 </ns2:unionOf>
@@ -1615,28 +1675,6 @@
             </ns2:Class>
         </ns1:range>
     </ns2:ObjectProperty>
-    <ns2:ObjectProperty ns3:about="http://xmlns.com/foaf/0.1/ComponentContent_choice">
-        <ns1:subPropertyOf ns3:resource="http://xmlns.com/foaf/0.1/ComponentContent_choice"/>
-        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/ComponentContent"/>
-        <ns1:range>
-            <ns2:Class>
-                <ns2:unionOf ns3:parseType="Collection">
-                    <ns2:Restriction>
-                        <ns2:onProperty ns3:resource="http://xmlns.com/foaf/0.1/ComponentContent_choice"/>
-                        <ns2:someValuesFrom ns3:resource="http://xmlns.com/foaf/0.1/ComponentContent"/>
-                    </ns2:Restriction>
-                    <ns2:Restriction>
-                        <ns2:onProperty ns3:resource="http://xmlns.com/foaf/0.1/ComponentContent_choice"/>
-                        <ns2:someValuesFrom ns3:resource="http://xmlns.com/foaf/0.1/Content"/>
-                    </ns2:Restriction>
-                    <ns2:Restriction>
-                        <ns2:onProperty ns3:resource="http://xmlns.com/foaf/0.1/ComponentContent_choice"/>
-                        <ns2:someValuesFrom ns3:resource="http://xmlns.com/foaf/0.1/StorageComponentContent"/>
-                    </ns2:Restriction>
-                </ns2:unionOf>
-            </ns2:Class>
-        </ns1:range>
-    </ns2:ObjectProperty>
     <ns2:DatatypeProperty xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="protection_type" ns1:comment="protection_type" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/protection_type">
         <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/ProtectionRequirement"/>
         <ns1:range>
@@ -1748,6 +1786,10 @@
                     </ns2:Restriction>
                     <ns2:Restriction>
                         <ns2:onProperty ns3:resource="http://xmlns.com/foaf/0.1/Event_choice"/>
+                        <ns2:someValuesFrom ns3:resource="http://xmlns.com/foaf/0.1/RequestEvent"/>
+                    </ns2:Restriction>
+                    <ns2:Restriction>
+                        <ns2:onProperty ns3:resource="http://xmlns.com/foaf/0.1/Event_choice"/>
                         <ns2:someValuesFrom ns3:resource="http://xmlns.com/foaf/0.1/ChangeEvent"/>
                     </ns2:Restriction>
                     <ns2:Restriction>
@@ -1801,6 +1843,26 @@
                     <ns2:Restriction>
                         <ns2:onProperty ns3:resource="http://xmlns.com/foaf/0.1/Event_choice"/>
                         <ns2:someValuesFrom ns3:resource="http://xmlns.com/foaf/0.1/DeviationEvent"/>
+                    </ns2:Restriction>
+                    <ns2:Restriction>
+                        <ns2:onProperty ns3:resource="http://xmlns.com/foaf/0.1/Event_choice"/>
+                        <ns2:someValuesFrom ns3:resource="http://xmlns.com/foaf/0.1/ReceptionEvent"/>
+                    </ns2:Restriction>
+                    <ns2:Restriction>
+                        <ns2:onProperty ns3:resource="http://xmlns.com/foaf/0.1/Event_choice"/>
+                        <ns2:someValuesFrom ns3:resource="http://xmlns.com/foaf/0.1/AuthorizationEvent"/>
+                    </ns2:Restriction>
+                    <ns2:Restriction>
+                        <ns2:onProperty ns3:resource="http://xmlns.com/foaf/0.1/Event_choice"/>
+                        <ns2:someValuesFrom ns3:resource="http://xmlns.com/foaf/0.1/FirstUsageEvent"/>
+                    </ns2:Restriction>
+                    <ns2:Restriction>
+                        <ns2:onProperty ns3:resource="http://xmlns.com/foaf/0.1/Event_choice"/>
+                        <ns2:someValuesFrom ns3:resource="http://xmlns.com/foaf/0.1/DeploymentEvent"/>
+                    </ns2:Restriction>
+                    <ns2:Restriction>
+                        <ns2:onProperty ns3:resource="http://xmlns.com/foaf/0.1/Event_choice"/>
+                        <ns2:someValuesFrom ns3:resource="http://xmlns.com/foaf/0.1/StartOfSupplyEvent"/>
                     </ns2:Restriction>
                 </ns2:unionOf>
             </ns2:Class>
@@ -2272,6 +2334,36 @@
                         <ns2:onProperty ns3:resource="http://xmlns.com/foaf/0.1/Content_choice"/>
                         <ns2:someValuesFrom ns3:resource="http://xmlns.com/foaf/0.1/Consent"/>
                     </ns2:Restriction>
+                    <ns2:Restriction>
+                        <ns2:onProperty ns3:resource="http://xmlns.com/foaf/0.1/Content_choice"/>
+                        <ns2:someValuesFrom ns3:resource="http://xmlns.com/foaf/0.1/Specification"/>
+                    </ns2:Restriction>
+                    <ns2:Restriction>
+                        <ns2:onProperty ns3:resource="http://xmlns.com/foaf/0.1/Content_choice"/>
+                        <ns2:someValuesFrom ns3:resource="http://xmlns.com/foaf/0.1/Right"/>
+                    </ns2:Restriction>
+                </ns2:unionOf>
+            </ns2:Class>
+        </ns1:range>
+    </ns2:ObjectProperty>
+    <ns2:ObjectProperty ns3:about="http://xmlns.com/foaf/0.1/ComponentContent_choice">
+        <ns1:subPropertyOf ns3:resource="http://xmlns.com/foaf/0.1/ComponentContent_choice"/>
+        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/AbstractContent"/>
+        <ns1:range>
+            <ns2:Class>
+                <ns2:unionOf ns3:parseType="Collection">
+                    <ns2:Restriction>
+                        <ns2:onProperty ns3:resource="http://xmlns.com/foaf/0.1/ComponentContent_choice"/>
+                        <ns2:someValuesFrom ns3:resource="http://xmlns.com/foaf/0.1/ComponentContent"/>
+                    </ns2:Restriction>
+                    <ns2:Restriction>
+                        <ns2:onProperty ns3:resource="http://xmlns.com/foaf/0.1/ComponentContent_choice"/>
+                        <ns2:someValuesFrom ns3:resource="http://xmlns.com/foaf/0.1/Content"/>
+                    </ns2:Restriction>
+                    <ns2:Restriction>
+                        <ns2:onProperty ns3:resource="http://xmlns.com/foaf/0.1/ComponentContent_choice"/>
+                        <ns2:someValuesFrom ns3:resource="http://xmlns.com/foaf/0.1/StorageComponentContent"/>
+                    </ns2:Restriction>
                 </ns2:unionOf>
             </ns2:Class>
         </ns1:range>
@@ -2513,9 +2605,9 @@
         <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
     </ns3:Property>
     <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="collaborate_with" ns1:comment="collaborate_with" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/collaborate_with">
-        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/CollaborationRequirement"/>
-        <ns1:range ns3:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/Actor"/>
         <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
     </ns3:Property>
     <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="caused_by" ns1:comment="caused_by" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/caused_by">
@@ -2560,6 +2652,12 @@
         <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/Content"/>
         <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
     </ns3:Property>
+    <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="used_content" ns1:comment="used_content" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/used_content">
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/FirstUsageEvent"/>
+        <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/Content"/>
+        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns3:Property>
     <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="requirement_on" ns1:comment="requirement_on" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/requirement_on">
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/GeneralizedRequirement"/>
@@ -2572,6 +2670,12 @@
         <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/using_type"/>
         <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
     </ns3:Property>
+    <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="last_updated" ns1:comment="last_updated" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/last_updated">
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/Specification"/>
+        <ns1:range ns3:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns3:Property>
     <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="user-generated" ns1:comment="user-generated" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/user-generated">
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
         <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/ComponentContent"/>
@@ -2582,6 +2686,12 @@
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/OrganizationPropertyRequirement"/>
         <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/Property"/>
+        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns3:Property>
+    <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="facilitation_recipient" ns1:comment="facilitation_recipient" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/facilitation_recipient">
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/FacilitationRequirement"/>
+        <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/Actor"/>
         <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
     </ns3:Property>
     <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="CVE" ns1:comment="CVE" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/CVE">
@@ -2617,12 +2727,6 @@
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
         <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/ComponentContent"/>
         <ns1:range ns3:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
-    </ns3:Property>
-    <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="parent_content" ns1:comment="parent_content" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/parent_content">
-        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/AbstractContent"/>
-        <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/Content"/>
         <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
     </ns3:Property>
     <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="implemented_content" ns1:comment="implemented_content" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/implemented_content">
@@ -2707,6 +2811,7 @@
             <ns2:Class>
                 <ns2:unionOf ns3:parseType="Collection">
                     <ns3:Description ns3:about="http://xmlns.com/foaf/0.1/GoalToAllowActionType"/>
+                    <ns3:Description ns3:about="http://xmlns.com/foaf/0.1/action"/>
                     <ns3:Description ns3:about="http://xmlns.com/foaf/0.1/Requirement"/>
                     <ns3:Description ns3:about="http://xmlns.com/foaf/0.1/GoalToProhibitActionType"/>
                 </ns2:unionOf>
@@ -2724,6 +2829,12 @@
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/DefinitionRequirement"/>
         <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/Content"/>
+        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns3:Property>
+    <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="authorized_action" ns1:comment="authorized_action" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/authorized_action">
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/AuthorizationEvent"/>
+        <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/action"/>
         <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
     </ns3:Property>
     <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="can_only_communicate_over_secure_channel" ns1:comment="can_only_communicate_over_secure_channel" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/can_only_communicate_over_secure_channel">
@@ -2792,9 +2903,9 @@
         <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
     </ns3:Property>
     <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="prior_to" ns1:comment="prior_to" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/prior_to">
-        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/Requirement"/>
-        <ns1:range ns3:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/Event"/>
         <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
     </ns3:Property>
     <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="note_name" ns1:comment="note_name" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/note_name">
@@ -2834,7 +2945,6 @@
                     <ns3:Description ns3:about="http://xmlns.com/foaf/0.1/action"/>
                     <ns3:Description ns3:about="http://xmlns.com/foaf/0.1/Requirement"/>
                     <ns3:Description ns3:about="http://xmlns.com/foaf/0.1/CVE"/>
-                    <ns3:Description ns3:about="http://xmlns.com/foaf/0.1/Specification"/>
                     <ns3:Description ns3:about="http://xmlns.com/foaf/0.1/GeneralEvent"/>
                     <ns3:Description ns3:about="http://xmlns.com/foaf/0.1/AbstractAction"/>
                     <ns3:Description ns3:about="http://xmlns.com/foaf/0.1/Phase"/>
@@ -2854,7 +2964,7 @@
     </ns3:Property>
     <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="event_to_prevent" ns1:comment="event_to_prevent" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/event_to_prevent">
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/AvoidingEventDesignRequirement"/>
+        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/AvoidingEventRequirement"/>
         <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/Event"/>
         <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
     </ns3:Property>
@@ -2957,6 +3067,12 @@
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
         <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/Change"/>
         <ns1:range ns3:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns3:Property>
+    <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="deployed_content" ns1:comment="deployed_content" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/deployed_content">
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/DeploymentEvent"/>
+        <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/Content"/>
         <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
     </ns3:Property>
     <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="evidence_of" ns1:comment="evidence_of" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/evidence_of">
@@ -3069,10 +3185,22 @@
         <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/action"/>
         <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
     </ns3:Property>
-    <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="action" ns1:comment="action" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/action">
-        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/GoalToAutoPerformActionType"/>
+    <ns2:ObjectProperty xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="action" ns1:comment="action" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/action">
+        <ns1:domain>
+            <ns2:Class>
+                <ns2:unionOf ns3:parseType="Collection">
+                    <ns3:Description ns3:about="http://xmlns.com/foaf/0.1/GoalToAutoPerformActionType"/>
+                    <ns3:Description ns3:about="http://xmlns.com/foaf/0.1/Capacity"/>
+                    <ns3:Description ns3:about="http://xmlns.com/foaf/0.1/RequestEvent"/>
+                </ns2:unionOf>
+            </ns2:Class>
+        </ns1:domain>
         <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/action"/>
+    </ns2:ObjectProperty>
+    <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="supplied_content" ns1:comment="supplied_content" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/supplied_content">
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/StartOfSupplyEvent"/>
+        <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/Content"/>
         <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
     </ns3:Property>
     <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="validation" ns1:comment="validation" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/validation">
@@ -3104,6 +3232,12 @@
         </ns1:domain>
         <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/Goal"/>
     </ns2:ObjectProperty>
+    <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="received_content" ns1:comment="received_content" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/received_content">
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/ReceptionEvent"/>
+        <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/Content"/>
+        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns3:Property>
     <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="modification_resistant" ns1:comment="modification_resistant" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/modification_resistant">
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
         <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/ComponentContent"/>
@@ -3126,6 +3260,12 @@
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
         <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/Device"/>
         <ns1:range ns3:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns3:Property>
+    <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="helping_actor" ns1:comment="helping_actor" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/helping_actor">
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+        <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/Actor"/>
         <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
     </ns3:Property>
     <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="based_on_content" ns1:comment="based_on_content" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/based_on_content">
@@ -3282,10 +3422,22 @@
         <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/Content"/>
         <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
     </ns3:Property>
+    <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="except_event" ns1:comment="except_event" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/except_event">
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/ProhibitedPerformingRequirement"/>
+        <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/Event"/>
+        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns3:Property>
     <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="causing_content" ns1:comment="causing_content" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/causing_content">
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/CauseOf"/>
         <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/Content"/>
+        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns3:Property>
+    <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="right_to_action" ns1:comment="right_to_action" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/right_to_action">
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/Right"/>
+        <ns1:range ns3:resource="http://xmlns.com/foaf/0.1/action"/>
         <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
     </ns3:Property>
     <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="using_unique_key" ns1:comment="using_unique_key" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/using_unique_key">
@@ -3322,6 +3474,12 @@
         <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
         <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/Requirement"/>
         <ns1:range ns3:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
+    </ns3:Property>
+    <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="lastModified" ns1:comment="lastModified" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/lastModified">
+        <ns3:type ns3:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <ns1:domain ns3:resource="http://xmlns.com/foaf/0.1/Requirement"/>
+        <ns1:range ns3:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <ns1:isDefinedBy ns3:resource="http://xmlns.com/foaf/0.1/"/>
     </ns3:Property>
     <ns3:Property xmlns:ns6="http://www.w3.org/2003/06/sw-vocab-status/ns#" ns1:label="propertyToEnsure" ns1:comment="propertyToEnsure" ns6:term_status="testing" ns3:about="http://xmlns.com/foaf/0.1/propertyToEnsure">

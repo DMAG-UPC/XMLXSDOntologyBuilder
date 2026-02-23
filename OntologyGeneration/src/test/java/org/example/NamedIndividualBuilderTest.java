@@ -21,11 +21,31 @@ import java.nio.charset.StandardCharsets;
 
 public class NamedIndividualBuilderTest {
 
+    /*@Test
+    public void build() {
+        final OWLOntologyManager manager = OWLManager.createConcurrentOWLOntologyManager();
+        CreationContext creationContext = new CreationContext();
+        try {
+            final OWLOntology ontology = manager.loadOntologyFromOntologyDocument(new File("src/test/resources/generated_rdf_OneComplexType.xml"));
+            XsdParser parserInstance = null;
+            NamedIndividualBuilder namedIndividualBuilder = new NamedIndividualBuilder("http://xmlns.com/foaf/0.1/", "rootType", parserInstance);
+            namedIndividualBuilder.addDataProperty(psviElem, "element_a", "test");
+            namedIndividualBuilder.addDataProperty(psviElem, "element_b", 1);
+            namedIndividualBuilder.build(ontology, creationContext);
+            try(FileOutputStream fileOutputStream = new FileOutputStream("src/test/resources/generated_populated_rdf_OneComplexType.xml")) {
+                ontology.saveOntology(fileOutputStream);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail();
+        }
+    }*/
+
     @Test
     public void buildFromXMLWithOneElement() {
         File xmlFile = new File("src/test/resources/oneComplexType_example1.xml");
         //File xsdFile = new File("src/test/resources/Testing_OneComplexType.xsd");
-        String modelPath = "src/test/resources/generated_rdf_OneComplexType.xml";
+        String modelPath = "src/test/resources/expected_Testing_OneComplexType.xml";
         CreationContext creationContext = new CreationContext();
 
         final OWLOntologyManager manager = OWLManager.createConcurrentOWLOntologyManager();
@@ -60,7 +80,7 @@ public class NamedIndividualBuilderTest {
     public void buildFromXMLWithTwoElement() {
         File xmlFile = new File("src/test/resources/oneComplexType_example2.xml");
         //File xsdFile = new File("src/test/resources/Testing_OneComplexType.xsd");
-        String modelPath = "src/test/resources/generated_rdf_OneComplexType.xml";
+        String modelPath = "src/test/resources/expected_Testing_OneComplexType.xml";
         CreationContext creationContext = new CreationContext();
 
         final OWLOntologyManager manager = OWLManager.createConcurrentOWLOntologyManager();

@@ -1,144 +1,73 @@
-# Objective of the project
-By providing an XML and XSD pair, this project tranform it into an Ontology (OWL/RDF).
+# MedSecurance 🚀
 
-# Building
-The project can be built using the command `mvn package`.
+This repository contains the tooling to transform a XML/XSD file pair into an OWL/RDF ontology. This tooling has been used to create an ontology of the requirements defined by specifications and standards in the world of Internet of Medical Things.
 
-# Usage
-An ontology can be generated with this tool through the following command:
-`java -jar target/XMLXSDOntologyBuilder-1.0-SNAPSHOT.jar generateOntology --xml path_to_xml.xml --xsd path_to_xsd.xsd --out path_to_ontology.xml`
+## How to use
+This context contains four folders, to address different needs of the user.
 
-For testing purposes, our ontology for IoMT can be used for testing:
-'java -jar target/XMLXSDOntologyBuilder-1.0-SNAPSHOT.jar generateOntology --xml src/main/resources/Requirements.xml --xsd src/main/resources/input/RequirementsSchemas.xsd --out /mnt/c/Users/narow/Downloads/test_ontology.xml'
+### OntologyGeneration
+This folder contains the Java project (to be compiled with Maven), which allows to translate the XML containing all requirements (and its XSD) to an ontology.
 
-The provided schema should comply with the following rules:
-- There shall be no nameless types. In XSD, an element can define its type in situ, without giving it a proper name. Nevertheless, as we need to define the ontology’s classes with their names, we rely on the XSD type’s name and mandate that it is always provided.
-- XSD choices shall be annotated with a name. When creating the ontology’s Data or Object Property, we require a name for this relationship. As XSD’s choices are nameless, we mandate the provisioning of an annotation to provide their name.
-- The root element shall be a list of elements of interest. The transformation program expects to find within the root element a sequence of elements to translate into ontology instances. Each element in the hierarchy is then traversed to discover every instance to be created in the ontology.
+### OutputOntology
+This folder contains the ontology in OWL/RDF format (i.e. the result of OntologyCreation when executed on all requirements).
 
-# SparQL queries on our IoMT requirements ontologies
-## Retrieving Actor to Specification relations
+This file can be opened in existing tools such as Protégé, or it can be made available in SPARQL as described in the next section.
+
+### OntologyDocker
+This folder contains a Dockerfile which makes the Ontology reachable over SPARQL (it starts a Jena/Fuseki, and translates the ontology to the required format)
+
+In order to build the Docker image, enter the folder and execute the following command:
+
 ```
-PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?actor (GROUP_CONCAT(DISTINCT ?specificationName; separator=", ") AS ?specificationNames)
-WHERE {
-    {
-        ?requirement ?rel ?actor .
-    } UNION {
-        ?requirement ?rel ?mid1 .
-        ?mid1 ?rel2 ?actor.
-    } UNION {
-        ?requirement ?rel ?mid1 .
-        ?mid1 ?rel2 ?mid2 .
-        ?mid2 ?rel3 ?actor.
-    } UNION {
-        ?mid1 ?rel2 ?mid2 .
-        ?mid2 ?rel3 ?mid3 .
-        ?mid3 ?rel4 ?actor.    
-    }
-    ?requirement a ?requirement_type.
-    ?actor a foaf:Actor.
-    ?requirement_type rdfs:subClassOf foaf:Requirement .
-    ?requirement foaf:requirement_origin ?requirement_origin.
-    ?requirement_origin foaf:specification ?specification.
-    ?specification foaf:name ?specificationName.
-}
-GROUP BY ?actor
+docker build -t ontologydocker .
 ```
 
-## Retrieving Event to Specification relations
+This command alreay takes care of copying the ontology and translating it as required by Jena/Fuseki.
+
+Once the docker image is build, the container should be started with:
 ```
-PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?event (GROUP_CONCAT(DISTINCT ?specificationName; separator=", ") AS ?specificationNames)
-WHERE {
-    {
-        ?requirement ?rel ?event .
-    } UNION {
-        ?requirement ?rel ?mid1 .
-        ?mid1 ?rel2 ?event.
-    } UNION {
-        ?requirement ?rel ?mid1 .
-        ?mid1 ?rel2 ?mid2 .
-        ?mid2 ?rel3 ?event.
-    } UNION {
-        ?mid1 ?rel2 ?mid2 .
-        ?mid2 ?rel3 ?mid3 .
-        ?mid3 ?rel4 ?event.    
-    }
-    ?requirement a ?requirement_type.
-    ?event a foaf:Event.
-    ?requirement_type rdfs:subClassOf foaf:Requirement .
-    ?requirement foaf:requirement_origin ?requirement_origin.
-    ?requirement_origin foaf:specification ?specification.
-    ?specification foaf:name ?specificationName.
-}
-GROUP BY ?event
+docker run -p 3030:3030 ontologydocker
 ```
 
-## Retrieving Component to Specification relations
-```
-PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?component (GROUP_CONCAT(DISTINCT ?specificationName; separator=", ") AS ?specificationNames)
-WHERE {
-    {
-        ?requirement ?rel ?component .
-    } UNION {
-        ?requirement ?rel ?mid1 .
-        ?mid1 ?rel2 ?component.
-    } UNION {
-        ?requirement ?rel ?mid1 .
-        ?mid1 ?rel2 ?mid2 .
-        ?mid2 ?rel3 ?component.
-    } UNION {
-        ?mid1 ?rel2 ?mid2 .
-        ?mid2 ?rel3 ?mid3 .
-        ?mid3 ?rel4 ?component.    
-    }
-    ?requirement a ?requirement_type.
-    ?component a foaf:ComponentContent.
-    ?requirement_type rdfs:subClassOf foaf:Requirement .
-    ?requirement foaf:requirement_origin ?requirement_origin.
-    ?requirement_origin foaf:specification ?specification.
-    ?specification foaf:name ?specificationName.
-}
-GROUP BY ?component
-```
+There is alternatively an existing docker image under: 'danielnaro/ontologyserver'.
 
-## Retrieving Requirement to Specification Relation
+It then offers a SPARQL endpoint on port 3030, which can be reached over `localhost`.
+
+
+### OntologyRequests
+This folder contains a collection of shell scripts, each one with one cURL command, showing examples of how to reach the Ontology over SPARQL.
+
+An example of such cURL command follows:
+
 ```
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+curl --location 'http://localhost:3030/ds/sparql' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'query=PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema>
-SELECT ?requirement ?requirementName ?requirement_type ?specification ?modalVerb ?actorName WHERE {
-   ?requirement a ?requirement_type ; foaf:requirement_origin ?origin ; foaf:name ?requirementName; foaf:actor ?actor.
-   ?actor foaf:name ?actorName.
-   ?origin foaf:specification ?specification ; foaf:clauseOrigin ?clauseOrigin.
-   ?clauseOrigin foaf:modalVerb ?modalVerb.
-   ?requirement_type <http://www.w3.org/2000/01/rdf-schema#subClassOf> foaf:Requirement .
- }
+SELECT ?eventName ?event_type ?change_direction ?change_name ?change_target ?changedContentName ?identifiedContentName ?changeRelationship
+WHERE {
+    ?event a ?event_type; foaf:name ?eventName.
+    ?event_type <http://www.w3.org/2000/01/rdf-schema#subClassOf> foaf:GeneralEvent .
+    OPTIONAL {
+        ?event foaf:change ?changeInstance.
+        ?changeInstance foaf:changed_content ?changedContentWrapper.
+        ?changedContentWrapper foaf:Content_choice ?changedContent.
+        ?changedContent foaf:name ?changedContentName.
+
+        OPTIONAL {
+            ?changeInstance foaf:change_direction ?change_direction.
+        }
+        OPTIONAL {
+            ?changeInstance foaf:target ?change_target
+        }
+    }
+    OPTIONAL {
+        ?event foaf:identified ?identifiedContentWrapper.
+        ?identifiedContentWrapper foaf:Content_choice ?identifiedContent.
+        ?identifiedContent foaf:name ?identifiedContentName.
+    }
+}'
 ```
 
-## Retrieving Invalidated requirements due to CVE
-```
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns> 
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema> 
-SELECT ?specification ?modalVerb ?actorName ?CVE ?value ?cvegroup
-WHERE {   
-    ?requirement a ?requirement_type ; foaf:requirement_origin ?origin ; foaf:name ?requirementName; foaf:actor ?actor.   
-    ?actor foaf:name ?actorName.
-   ?origin foaf:specification ?specification ; foaf:clauseOrigin ?clauseOrigin.
-   ?clauseOrigin foaf:modalVerb ?modalVerb.
-   ?requirement_type <http://www.w3.org/2000/01/rdf-schema#subClassOf> foaf:Requirement .
-   ?requirement foaf:invalidating_CVE_group ?cvegroup.
-   ?cvegroup foaf:CVE ?CVE.
-   ?CVE foaf:name ?CVEName
-   FILTER regex(str(?CVEName), "CVE-2004-2261", "i")
-}
-```
+One can see the url (`http://localhost:3030/ds/sparql`), and the SPARQL query.

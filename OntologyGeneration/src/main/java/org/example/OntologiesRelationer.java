@@ -41,10 +41,14 @@ public class OntologiesRelationer {
     }
 
     public static OWLOntology addImport(OWLOntology ontology, OWLOntologyManager manager, String importedUrl){
+
+        // Step 3: Define the IRI of the ontology to be imported (the one containing the new types)
         IRI importOntologyIRI = IRI.create(importedUrl); // Modify with actual IRI
 
+        // Step 4: Create the import declaration
         OWLImportsDeclaration importDeclaration = manager.getOWLDataFactory().getOWLImportsDeclaration(importOntologyIRI);
 
+        // Step 5: Apply the import to the main ontology
         manager.applyChange(new AddImport(ontology, importDeclaration));
 
         return ontology;

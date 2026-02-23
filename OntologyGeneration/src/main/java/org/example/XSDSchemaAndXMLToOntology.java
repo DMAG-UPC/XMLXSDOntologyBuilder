@@ -1,7 +1,5 @@
 package org.example;
 
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.xerces.xs.ElementPSVI;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.OWLOntology;
@@ -31,11 +29,8 @@ import java.util.List;
 
 
 public class XSDSchemaAndXMLToOntology {
-    private static Model schemaModel = ModelFactory.createDefaultModel();
-    private static Model xmlModel = ModelFactory.createDefaultModel();
-    private static int counter = 0;
 
-    public static void transform(File xmlFile, String xsdFilePath, OutputStream finalResultoutputStream) throws IOException {
+    public static void transform(String xmlFilePath, String xsdFilePath, OutputStream finalResultoutputStream) throws IOException {
         File tempFile = File.createTempFile("generatedOntologySchema-", ".xml");
         tempFile.deleteOnExit();
 
@@ -50,7 +45,7 @@ public class XSDSchemaAndXMLToOntology {
         try {
             final OWLOntology ontology = manager.loadOntologyFromOntologyDocument(tempFile);
 
-            Document doc = getDocument(xmlFile);
+            Document doc = getDocument(new File(xmlFilePath));
 
             Element documentElement = doc.getDocumentElement();
             NodeList nodeList = documentElement.getChildNodes();
