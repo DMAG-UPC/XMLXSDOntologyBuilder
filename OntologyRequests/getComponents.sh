@@ -1,4 +1,4 @@
-curl --location 'http://signer.ontology/ds/sparql' \
+curl --location 'http://dmag1.ac.upc.edu:3030/ds/sparql' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'query=PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns>
