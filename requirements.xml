@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Requirements xmlns="edu.upc.dmag" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="edu.upc.dmag ../../main/resources/input/RequirementsSchemas.xsd">
+<Requirements xmlns="edu.upc.dmag" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="edu.upc.dmag RequirementsSchemas.xsd">
     <documentation_requirement>
         <name>Requirement that manufacturer shall document the rationale of any risk-benefit decision</name>
         <actor>
